@@ -17,6 +17,8 @@ import java.time.format.FormatStyle;
  */
 public class TitlePage {
 
+  private TitlePage() {}
+
   /**
    * Injects a title page fragment into the given XML document.
    *
