@@ -4,7 +4,7 @@ Generate beautiful, print-ready PDFs from PSML documents with the Flying Saucer 
 
 ## License
 
-- This project is licensed under the [Apache License, Version 2.0](LICENSE).
+- This project is licensed under the [Apache License, Version 2.0](LICENCE.md).
 - It depends on external libraries, including [Flying Saucer](https://github.com/flyingsaucerproject/flyingsaucer), which is licensed under the [GNU Lesser General Public License (LGPL)](https://www.gnu.org/licenses/lgpl-2.1.html).
 
 ## Notices and Requirements for LGPL Libraries
