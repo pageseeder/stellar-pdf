@@ -1,0 +1,33 @@
+[versions]
+ant = "1.10.15"
+bouncycastle = "1.80"
+flyingsaucer = "9.5.2"
+junit = "5.13.2"
+junit-platform = "1.13.2"
+slf4j = "2.0.17"
+
+[libraries]
+annotations = { module = "org.eclipse.jdt:org.eclipse.jdt.annotation", version = "2.3.100" }
+ant-core = { module = "org.apache.ant:ant", version.ref = "ant" }
+bouncycastle-prov = { module = "org.bouncycastle:bcprov-jdk18on", version.ref = "bouncycastle" }
+bouncycastle-mail = { module = "org.bouncycastle:bcmail-jdk18on", version.ref = "bouncycastle" }
+bouncycastle-pkix = { module = "org.bouncycastle:bcpkix-jdk18on", version.ref = "bouncycastle" }
+flyingsaucer-core = { module = "org.xhtmlrenderer:flying-saucer-core", version.ref = "flyingsaucer" }
+flyingsaucer-pdf = { module = "org.xhtmlrenderer:flying-saucer-pdf", version.ref = "flyingsaucer" }
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform" }
+junit-platform-engine = { module = "org.junit.platform:junit-platform-engine", version.ref = "junit-platform" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+
+[bundles]
+junit = [
+    "junit-jupiter-api",
+    "junit-platform-launcher",
+    "junit-platform-engine"
+]
+
+[plugins]
+jreleaser = { id = "org.jreleaser", version = "1.18.0" }

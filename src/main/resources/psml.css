@@ -1,0 +1,208 @@
+/**
+ * Build-in PSML styles
+ */
+@page {
+    size: A4;
+    margin: 24mm 20mm;
+}
+
+document {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+    color: #222;
+}
+
+fragmentinfo, metadata, versions, reversexrefs {
+    display: none;
+}
+
+/* Table of contents */
+
+toc {
+    display: block;
+    page-break-before: always;
+    page-break-after: always;
+}
+
+toc-tree::before {
+    content: 'Table of Contents';
+    display: block;
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+toc-part {
+    display: block;
+    font-size: 10pt;
+}
+
+toc-part > toc-part {
+    font-size: 9pt;
+    margin-left: 5mm;
+}
+
+toc-part link {
+    display: block;
+}
+
+toc-part link::before {
+    content: attr(prefix) ' \00a0';
+}
+
+toc-part link::after {
+    content: leader(dotted) target-counter(attr(href), page);
+}
+
+toc-part[level='1']>link {
+    font-weight: bold;
+    margin: 1.5mm 0;
+}
+
+/* Heading styles */
+
+heading, section > title {
+    display: block;
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 18pt 0 8pt 0;
+    page-break-after: avoid;
+}
+
+heading[level='1'] {
+    font-size: 32pt;
+}
+
+heading[level='2'],
+section > title {
+    font-size: 18pt;
+}
+
+heading[level='3'] {
+    font-size: 15pt;
+}
+
+heading[level='4'] {
+    font-size: 12pt;
+}
+
+heading[level='5'] {
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+/* Paragraph styles */
+
+para {
+    display: block;
+    margin-bottom: 8pt;
+    line-height: 1.5;
+}
+
+para[indent='1'] {
+
+}
+
+para[indent='2'] {
+    margin-left: 2em;
+}
+
+para[indent='3'] {
+    margin-left: 4em;
+}
+
+para[prefix]::before {
+    font-weight: bold;
+}
+
+/* List styles */
+
+list, nlist {
+    display: block;
+    margin: 8pt 0 8pt 24pt;
+    padding-left: 12pt;
+}
+
+list {
+    list-style-type: circle;
+}
+
+nlist {
+    list-style-type: decimal;
+}
+
+item {
+    display: list-item;
+    margin-bottom: 4pt;
+}
+
+/* Table styles */
+
+table {
+    display: table;
+    border-collapse: collapse;
+    margin: 12pt 0;
+    width: 100%;
+}
+
+col {
+    display: table-column;
+}
+
+row {
+    display: table-row;
+    page-break-inside: avoid;
+}
+
+col {
+    display: none;
+}
+
+hcell {
+    font-weight: bold;
+}
+
+hcell, cell {
+    display: table-cell;
+    border: 1px solid;
+    padding: 4pt 6pt;
+}
+
+/* Other */
+
+preformat {
+    white-space: pre
+}
+
+/* This should automatically be replaced in PDF */
+image {
+    display: inline-block;
+    border-width: 1px 1px 1px 1px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Inline styles */
+
+bold {
+    font-weight: bold;
+}
+
+italic {
+    font-style: italic;
+}
+
+underline {
+    text-decoration: underline;
+}
+
+monospace {
+    font-family: monospace;
+}
+
+br:before {
+    content: "\A";
+    white-space: pre-line;
+}

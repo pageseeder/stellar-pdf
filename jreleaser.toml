@@ -1,0 +1,40 @@
+[project]
+name = "stellar-pdf"
+description = "Generate beautiful, print-ready PDFs from PSML documents with the Flying Saucer library"
+longDescription = """
+
+"""
+tags = ["xml", "psml", "html", "pdf", "pageseeder", "java"]
+authors = ["Christophe Lauret", "Philip Rutherford"]
+license = "Apache-2.0"
+inceptionYear = "2025"
+vendor = "Allette Systems"
+
+# Organization info
+[project.links]
+homepage = "https://github.com/pageseeder/stellar-pdf"
+documentation = "https://github.com/pageseeder/stellar-pdf"
+license = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+
+# Java-specific configuration
+[project.languages.java]
+groupId = "org.pageseeder.stellar"
+
+# Git configuration
+[release.github]
+owner = "pageseeder"
+name = "stellar-pdf"
+username = "pageseeder"
+branch = "master"
+
+# Signing configuration
+[signing]
+active = "ALWAYS"
+armored = true
+mode = "FILE"
+
+# Maven deployment configuration
+[deploy.maven.mavenCentral.sonatype]
+active = "ALWAYS"
+url = "https://central.sonatype.com/api/v1/publisher"
+stagingRepositories = ["build/staging-deploy"]
