@@ -13,6 +13,12 @@ Generate beautiful, print-ready PDFs from PSML documents with the Flying Saucer 
 - For details, refer to the [LGPL license text](https://www.gnu.org/licenses/lgpl-2.1.html).
 - The source code for these third-party libraries can be found at their respective repositories. For Flying Saucer, see: [https://github.com/flyingsaucerproject/flyingsaucer](https://github.com/flyingsaucerproject/flyingsaucer).
 
+## Requirements
+
+This project requires the following:
+- **Java 11** or later.
+- **Ant 1.8** or later.
+
 ## Architecture
 
 This project uses CSS to generate PDF from PSML documents using the Flying Saucer library and OpenPDF.
@@ -55,7 +61,8 @@ then use the `stellar:export-pdf` task to generate the PDF.
 
 Use the `copyToLib` ant task to jar required files to the `build/output/lib` folder.
 Then upload the jars to your PageSeeder project template, for example in 
-the `template/[project]/stellar/lib` folder.
+the `template/[project]/stellar/lib` folder. NB You do not need to include SLF4J in 
+PageSeeder as it is already provided by the environment.
 
 You can use the following snippet to load the stellar ant task:
 
