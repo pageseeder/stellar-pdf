@@ -13,3 +13,132 @@ Generate beautiful, print-ready PDFs from PSML documents with the Flying Saucer 
 - For details, refer to the [LGPL license text](https://www.gnu.org/licenses/lgpl-2.1.html).
 - The source code for these third-party libraries can be found at their respective repositories. For Flying Saucer, see: [https://github.com/flyingsaucerproject/flyingsaucer](https://github.com/flyingsaucerproject/flyingsaucer).
 
+## Architecture
+
+This project uses CSS to generate PDF from PSML documents using the Flying Saucer library and OpenPDF.
+
+Flying Saucer is primarily focused on HTML, but can also generate PDFs from XML documents. This
+project provides adaptors for PSML as well built-in a CSS so that the PSML syntax can be used to
+generate PDFs.
+
+It can work on any PSML documents, but if you want to include bookmarks or a table of contents, you
+should process the document.
+
+To generate a PDF, this project uses two sets of files:
+1. **Source files**: The PSML files and images to convert to PSML.
+2. **Format files**: The CSS files, images and fonts used for formatting and styling.
+
+## Limitations
+
+This project is still in development and not yet ready for production.
+
+## Stellar tasks
+
+### `stellar:export-pdf`
+
+This task generates a PDF from a PSML document. It supports the following attributes:
+
+- `src`: the PSML document to process
+- `dest`: the PDF file to generate
+- `fontsdir`: the directory containing the fonts to use
+- `stylesheet`: the CSS stylesheet to use
+- `maxBookmarkLevel`: the max level of bookmarks to generate
+- `maxTocLevel`: the max level generate for the Table of Contents
+
+
+## PageSeeder usage
+
+To use this project, you need to update your `build.xml` to load the stellar ant task,
+then use the `stellar:export-pdf` task to generate the PDF.
+
+### Load the stellar ant task
+
+Use the `copyToLib` ant task to jar required files to the `build/output/lib` folder.
+Then upload the jars to your PageSeeder project template, for example in 
+the `template/[project]/stellar/lib` folder.
+
+You can use the following snippet to load the stellar ant task:
+
+```xml
+    <!-- Update the `stellar-dir` property to match your project -->
+    <path id="stellar.classpath"><fileset dir="${stellar-dir}/lib" includes="*.jar" /></path>
+    <taskdef uri="antlib:org.pageseeder.stellar.ant" classpathref="stellar.classpath"/>
+```
+
+You can then define the `stellar` namespace as `xmlns:stellar="antlib:org.pageseeder.stellar.ant"`
+to use the Stellar PDF tasks in your project.
+
+### Generate the PDF
+
+Use the `stellar:export-pdf` task to generate the PDF, for example:
+```xml
+    <stellar:export-pdf src="example.psml" dest="example.pdf"
+                 stylesheet="${stellar-dir}/css/example.css" />
+```
+
+### Example
+
+The following is an example of a `build.xml` file that uses the stellar ant task to generate a PDF
+for a PSML document.
+
+```xml
+<project name="pageseeder-document" 
+         xmlns:ps="antlib:com.pageseeder.publishapi.ant"
+         xmlns:stellar="antlib:org.pageseeder.stellar.ant">
+
+  <target name="create-pdf" description="Create PDF document">
+
+    <!-- Update the `stellar-dir` property to match your project -->
+    <property name="publication-config" value="../../../../../../template/default/publication/default/publication-config.xml"/>
+    <property name="stellar-dir" value="${basedir}/../../../stellar"/>
+
+    <!-- 1. Load the stellar ant task -->
+    <ps:progress percent="1" message="Loading stellar tasks"/>
+    <path id="stellar.classpath"><fileset dir="${stellar-dir}/lib" includes="*.jar" /></path>
+    <taskdef uri="antlib:org.pageseeder.stellar.ant" classpathref="stellar.classpath"/>
+
+    <!-- 2. Load the PageSeeder configuration -->
+    <ps:progress percent="5" message="Loading PageSeeder configuration"/>
+    <ps:config />
+
+    <property name="download" value="${ps.config.default.working}/download" />
+    <property name="process" value="${ps.config.default.working}/process" />
+    <mkdir dir="${download}"/>
+    <mkdir dir="${process}"/>
+
+    <!-- 3. Download the document from PageSeeder -->
+    <ps:progress percent="10" message="Exporting PSML from ${ps.config.default.uri.path}"/>
+    <ps:export src="${ps.config.default.uri.path}"
+               dest="${download}"
+               xrefdepth="1"
+               version="current"
+               publicationid="${ps.param.publicationid}">
+      <xrefs types="embed,transclude,math"/>
+    </ps:export>
+
+    <!-- 4. Process the document to generate the TOC, compute the numbering, embed xrefs -->
+    <ps:progress percent="30" message="Processing PSML"/>
+    <ps:process src="${download}" dest="${process}" stripmetadata="false" preservesrc="false">
+      <xrefs types="embed,transclude,math" >
+        <include name="${ps.config.default.uri.filename}" />
+      </xrefs>
+      <publication config="${publication-config}"
+                   rootfile="${ps.config.default.uri.filename}"
+                   generatetoc="true"
+                   headingleveladjust="numbering" />
+    </ps:process>
+
+    <!-- 5. Generate the PDF from the processed document -->
+    <ps:progress percent="60" message="Generating PDF"/>
+    <stellar:export-pdf src="${process}/${ps.config.default.uri.filename}"
+                       dest="${working}/${ps.config.default.uri.filename.no.ext}.pdf"
+                   fontsdir="${stellar-dir}/fonts"
+                 stylesheet="${stellar-dir}/css/default.css" />
+
+    <ps:progress percent="90"
+                 result="window"
+                 resultfile="${working}/${ps.config.default.uri.filename.no.ext}.pdf" />
+  </target>
+
+</project>
+```
