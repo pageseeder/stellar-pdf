@@ -14,7 +14,7 @@ import org.w3c.dom.NodeList;
  * @since 0.5.0
  * @version 0.5.2
  */
-public class TOC {
+public final class TOC {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(TOC.class);
 

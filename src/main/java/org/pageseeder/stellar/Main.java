@@ -1,6 +1,8 @@
 package org.pageseeder.stellar;
 
 import org.pageseeder.stellar.core.PdfGenerator;
+import org.pageseeder.stellar.core.TitlePageConfig;
+import org.pageseeder.stellar.core.TitlePageItem;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,6 +27,13 @@ public final class Main {
     int maxBookmarkLevel = getInt(main.getProperty("maxBookmarkLevel"), 6);
     int maxTocLevel = getInt(main.getProperty("maxTocLevel"), 6);
 
+    TitlePageConfig titlePageConfig = new TitlePageConfig();
+    titlePageConfig.addItem("description", "/document/documentinfo/uri/description");
+    titlePageConfig.addItem("date", "current-date()");
+    titlePageConfig.addItem("owner", "(//property[@name='owner'])[1]/@value");
+    titlePageConfig.addItem("test", "'TEST'");
+
+
     // Check arguments
     checkExists(source);
     checkExists(output.getParentFile());
@@ -35,6 +44,7 @@ public final class Main {
     PdfGenerator generator = new PdfGenerator();
     generator.setMaxBookmarkLevel(maxBookmarkLevel);
     generator.setMaxTocLevel(maxTocLevel);
+    generator.setTitlePageConfig(titlePageConfig);
     if (stylesheet != null) generator.setAuthorStylesheet(stylesheet);
     if (fontsDir != null) generator.setFontsDir(fontsDir);
     generator.generatePDF(source, output);

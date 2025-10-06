@@ -5,7 +5,7 @@ import org.xhtmlrenderer.pdf.DefaultPDFCreationListener;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
 /**
- * Used to inject the metadata from the PSML document into the PDF document.
+ * Used to load the PSML metadata and bookmarks into the PDF renderer.
  *
  * @author Christophe Lauret
  *
@@ -18,9 +18,7 @@ public class PsmlToPdfCreationListener extends DefaultPDFCreationListener {
 
   private final Info info;
 
-  public PsmlToPdfCreationListener(Document doc, int maxTocLevel, int maxBookmarkLevel) {
-    TOC.injectLinks(doc, maxTocLevel);
-    TitlePage.injectTitleFragment(doc);
+  public PsmlToPdfCreationListener(Document doc, int maxBookmarkLevel) {
     this.info = Info.load(doc);
     this.bookmarks = Bookmarks.load(doc, maxBookmarkLevel);
   }

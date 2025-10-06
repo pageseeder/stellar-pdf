@@ -31,13 +31,19 @@ public class PdfGenerator {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(PdfGenerator.class);
 
-  int maxTocLevel = 6;
+  private int maxTocLevel = 6;
 
-  int maxBookmarkLevel = 6;
+  private int maxBookmarkLevel = 6;
 
-  File fontsDir;
+  private File fontsDir;
 
-  String authorStylesheetUrl;
+  private String authorStylesheetUrl;
+
+  private TitlePageConfig titlePageConfig;
+
+  public void setTitlePageConfig(TitlePageConfig config) {
+    this.titlePageConfig = config;
+  }
 
   public void setMaxBookmarkLevel(int maxBookmarkLevel) {
     this.maxBookmarkLevel = maxBookmarkLevel;
@@ -79,8 +85,22 @@ public class PdfGenerator {
 
       // Process document
       Document doc = XMLResource.load(new InputSource(input.toURI().toString())).getDocument();
+
+      // Augment the document
+      TOC.injectLinks(doc, this.maxTocLevel);
+      TitlePage.injectTitleFragment(doc, this.titlePageConfig);
+      CssClasses.addClasses(doc);
+
+      try {
+        // To help debug
+        File pdfPsml = new File(input.getParentFile(), input.getName().replace(".psml", ".pdf.psml"));
+        Utils.writeDocumentToXML(doc, pdfPsml);
+      } catch (Exception ex) {
+        LOGGER.warn("Unable to write PDF PSML file", ex);
+      }
+
       renderer.setDocument(doc, input.toURI().toString(), namespaceHandler);
-      renderer.setListener(new PsmlToPdfCreationListener(doc, this.maxTocLevel, this.maxBookmarkLevel));
+      renderer.setListener(new PsmlToPdfCreationListener(doc, this.maxBookmarkLevel));
       renderer.layout();
       renderer.createPDF(out);
     }

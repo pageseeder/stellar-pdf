@@ -1,10 +1,19 @@
 package org.pageseeder.stellar.core;
 
 import com.lowagie.text.pdf.PdfDate;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import java.io.File;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -110,4 +119,24 @@ public final class Utils {
     return null;
   }
 
+  public static String getElementValue(Document doc, String expression) throws XPathExpressionException {
+    XPath xpath = XPathFactory.newInstance().newXPath();
+    return xpath.evaluate(expression, doc);
+  }
+
+  public static NodeList getNodes(Document doc, String expression) throws XPathExpressionException {
+    XPath xpath = XPathFactory.newInstance().newXPath();
+    return (NodeList) xpath.evaluate(expression, doc, XPathConstants.NODESET);
+  }
+
+  public static void writeDocumentToXML(Document doc, File file)
+      throws TransformerException, TransformerFactoryConfigurationError {
+    TransformerFactory factory = TransformerFactory.newInstance();
+    Transformer transformer = factory.newTransformer();
+    transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+    transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+    DOMSource source = new DOMSource(doc);
+    StreamResult result = new StreamResult(file);
+    transformer.transform(source, result);
+  }
 }

@@ -5,6 +5,7 @@ import org.apache.tools.ant.BuildException;
 import java.io.*;
 
 import org.pageseeder.stellar.core.PdfGenerator;
+import org.pageseeder.stellar.core.TitlePageConfig;
 
 public class PdfExportTask extends Task {
 
@@ -19,6 +20,8 @@ public class PdfExportTask extends Task {
   private int maxBookmarkLevel = 6;
 
   private int maxTocLevel = 6;
+
+  private TitlePageConfig titlePageConfig = null;
 
   public void setSrc(String src) {
     this.src = src;
@@ -44,6 +47,11 @@ public class PdfExportTask extends Task {
     this.maxTocLevel = maxTocLevel;
   }
 
+  // Support for nested <title-page> configuration
+  public void addConfiguredTitlePage(TitlePageConfig config) {
+    this.titlePageConfig = config;
+  }
+
   @Override
   public void execute() throws BuildException {
     if (src == null || dest == null) {
@@ -59,6 +67,12 @@ public class PdfExportTask extends Task {
       log("Exporting PSML file: "+input.getName()+" to PDF "+output.getName());
 
       PdfGenerator generator = newPdfGenerator();
+
+      // Pass title-page config if present
+      if (titlePageConfig != null) {
+        generator.setTitlePageConfig(titlePageConfig);
+      }
+
       generator.generatePDF(input, output);
 
       log("Conversion completed successfully");
