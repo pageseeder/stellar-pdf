@@ -7,6 +7,8 @@ public class TitlePageConfig {
 
   private final List<TitlePageItem> items = new ArrayList<>();
 
+  public TitlePageConfig() {}
+
   public void addItem(String name, String xpath) {
     TitlePageItem item = new TitlePageItem();
     item.setName(name);

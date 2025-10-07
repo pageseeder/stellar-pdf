@@ -18,6 +18,11 @@ public class TitlePageItem {
     this.format = format;
   }
 
+  public boolean hasNameAndXpath() {
+    return this.name != null && !this.name.isEmpty()
+        && this.xpath != null && !this.xpath.isEmpty();
+  }
+
   public String getName() {
     return name;
   }
