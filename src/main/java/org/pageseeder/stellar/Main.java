@@ -2,11 +2,11 @@ package org.pageseeder.stellar;
 
 import org.pageseeder.stellar.core.PdfGenerator;
 import org.pageseeder.stellar.core.TitlePageConfig;
-import org.pageseeder.stellar.core.TitlePageItem;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.Map;
 import java.util.Properties;
 
 public final class Main {
@@ -27,12 +27,15 @@ public final class Main {
     int maxBookmarkLevel = getInt(main.getProperty("maxBookmarkLevel"), 6);
     int maxTocLevel = getInt(main.getProperty("maxTocLevel"), 6);
 
-    TitlePageConfig titlePageConfig = new TitlePageConfig();
-    titlePageConfig.addItem("description", "/document/documentinfo/uri/description");
-    titlePageConfig.addItem("date", "current-date()");
-    titlePageConfig.addItem("owner", "(//property[@name='owner'])[1]/@value");
-    titlePageConfig.addItem("test", "'TEST'");
-
+    TitlePageConfig titlePageConfig = null;
+    for (Map.Entry<Object, Object> p : main.entrySet()) {
+      String name = (String)p.getKey();
+      if (name.startsWith("titlePage.")) {
+        if (titlePageConfig == null) titlePageConfig = new TitlePageConfig();
+        String value = (String)p.getValue();
+        titlePageConfig.addItem(name.substring(10), value);
+      }
+    }
 
     // Check arguments
     checkExists(source);
@@ -44,7 +47,7 @@ public final class Main {
     PdfGenerator generator = new PdfGenerator();
     generator.setMaxBookmarkLevel(maxBookmarkLevel);
     generator.setMaxTocLevel(maxTocLevel);
-    generator.setTitlePageConfig(titlePageConfig);
+    if (titlePageConfig != null) generator.setTitlePageConfig(titlePageConfig);
     if (stylesheet != null) generator.setAuthorStylesheet(stylesheet);
     if (fontsDir != null) generator.setFontsDir(fontsDir);
     generator.generatePDF(source, output);
