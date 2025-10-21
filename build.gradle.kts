@@ -2,6 +2,7 @@ plugins {
     id("java-library")
     id("maven-publish")
     alias(libs.plugins.jreleaser)
+    alias(libs.plugins.sonar)
 }
 
 val title: String by project

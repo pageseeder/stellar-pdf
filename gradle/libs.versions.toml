@@ -32,3 +32,4 @@ junit = [
 
 [plugins]
 jreleaser = { id = "org.jreleaser", version = "1.18.0" }
+sonar = { id = "org.sonarqube", version = "6.2.0.5505" }
