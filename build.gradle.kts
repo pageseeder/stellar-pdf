@@ -1,6 +1,7 @@
 plugins {
     id("java-library")
     id("maven-publish")
+    id("jacoco")
     alias(libs.plugins.jreleaser)
 }
 
@@ -57,6 +58,13 @@ tasks.test {
 tasks.withType<Javadoc> {
     options {
         encoding = "UTF-8"
+    }
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    reports {
+        xml.required.set(true)
     }
 }
 
