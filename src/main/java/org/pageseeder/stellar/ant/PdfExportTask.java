@@ -4,24 +4,25 @@ import org.apache.tools.ant.Task;
 import org.apache.tools.ant.BuildException;
 import java.io.*;
 
+import org.eclipse.jdt.annotation.Nullable;
 import org.pageseeder.stellar.core.PdfGenerator;
 import org.pageseeder.stellar.core.TitlePageConfig;
 
 public class PdfExportTask extends Task {
 
-  private String src;
+  private @Nullable String src;
 
-  private String dest;
+  private @Nullable String dest;
 
-  private String fontsDir;
+  private @Nullable String fontsDir;
   
-  private String stylesheet;
+  private @Nullable String stylesheet;
 
   private int maxBookmarkLevel = 6;
 
   private int maxTocLevel = 6;
 
-  private TitlePageConfig titlePageConfig = null;
+  private @Nullable TitlePageConfig titlePageConfig = null;
 
   public void setSrc(String src) {
     this.src = src;
@@ -54,7 +55,7 @@ public class PdfExportTask extends Task {
 
   @Override
   public void execute() throws BuildException {
-    if (src == null || dest == null) {
+    if (this.src == null || this.dest == null) {
       throw new BuildException("Both src and dest attributes are required");
     }
 
