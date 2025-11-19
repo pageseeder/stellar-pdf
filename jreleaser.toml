@@ -25,7 +25,7 @@ groupId = "org.pageseeder.stellar"
 owner = "pageseeder"
 name = "stellar-pdf"
 username = "pageseeder"
-branch = "master"
+branch = "main"
 
 # Signing configuration
 [signing]
