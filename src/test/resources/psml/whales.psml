@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document id="223771" schemaversion="1.4" type="sample" date="2025-11-19T17:04:52+11:00" version="current"
+          level="portable">
+  <documentinfo>
+    <uri id="223771" external="false" mediatype="application/vnd.pageseeder.psml+xml" documenttype="sample"
+         created="2025-11-19T16:54:13+11:00" modified="2025-11-19T17:04:52+11:00" scheme="http" host="localhost"
+         port="80" path="/ps/dev/features/2025/pdf/whales.psml"
+         decodedpath="/ps/dev/features/2025/pdf/whales.psml"
+         title="The Magnificent World of Whales">
+      <displaytitle>The Magnificent World of Whales</displaytitle>
+    </uri>
+  </documentinfo>
+  <fragmentinfo structure-modified="2025-11-19T16:54:59+11:00">
+    <locator id="293397" fragment="2" editid="745165" modified="2025-11-19T17:04:52+11:00"/>
+    <locator id="293398" fragment="5" editid="745153" modified="2025-11-19T16:55:27+11:00"/>
+    <locator id="293399" fragment="6" editid="745154" modified="2025-11-19T16:55:28+11:00"/>
+    <locator id="293400" fragment="7" editid="745159" modified="2025-11-19T16:55:28+11:00"/>
+    <locator id="293396" fragment="4" editid="745152" modified="2025-11-19T16:55:27+11:00"/>
+    <locator id="293401" fragment="3" editid="745150" modified="2025-11-19T16:55:26+11:00"/>
+  </fragmentinfo>
+  <metadata/>
+  <section id="title">
+    <fragment id="1">
+      <heading level="1">The Magnificent World of Whales</heading>
+    </fragment>
+  </section>
+  <section id="header">
+    <properties-fragment id="3">
+      <property name="author" title="Author" value="Olivia Smith"/>
+      <property name="pubdate" title="Published" datatype="date" value="2025-10-14"/>
+    </properties-fragment>
+  </section>
+  <section id="content">
+    <fragment id="2">
+      <para>Whales are among the most remarkable creatures to have ever inhabited our planet. These marine mammals have
+        captivated human imagination for centuries, inspiring myths, literature, and scientific inquiry. From the
+        smallest porpoises to the colossal blue whale, these animals demonstrate an incredible diversity of adaptations
+        that allow them to thrive in ocean environments around the globe.
+      </para>
+      <para>
+        <image src="whales/pexels-eliannedipp-4666750.jpg" uriid="223775" width="2120" height="1416"
+               alt="Humpback Whale Underwater"/>
+      </para>
+    </fragment>
+    <fragment id="4">
+      <heading level="2">Understanding Whale Biology</heading>
+      <para>Whales belong to the order Cetacea, which they share with dolphins and porpoises. Despite living their
+        entire lives in water, whales are mammals that breathe air, give birth to live young, and nurse their offspring
+        with milk. Their ancestors were land-dwelling creatures that returned to the ocean approximately 50 million
+        years ago, undergoing one of the most dramatic evolutionary transformations in the history of life on Earth.
+      </para>
+    </fragment>
+    <fragment id="5">
+      <heading level="3">Types of Whales</heading>
+      <para>There are two main suborders of whales:</para>
+      <list>
+        <item>
+          <bold>Baleen whales (Mysticeti)</bold>
+          - These whales have baleen plates instead of teeth and filter small prey from the water. This group includes
+          blue whales, humpback whales, and gray whales.
+        </item>
+        <item>
+          <bold>Toothed whales (Odontoceti)</bold>
+          - These whales have teeth and actively hunt larger prey. Sperm whales, orcas, and belugas belong to this
+          group.
+        </item>
+        <item>
+          <bold>Blue whales</bold>
+          - The largest animals ever known, reaching lengths of up to 100 feet and weighing as much as 200 tons.
+        </item>
+        <item>
+          <bold>Humpback whales</bold>
+          - Famous for their complex songs and acrobatic breaching behavior.
+        </item>
+        <item>
+          <bold>Sperm whales</bold>
+          - The largest toothed whales, capable of diving to depths exceeding 7,000 feet.
+        </item>
+      </list>
+    </fragment>
+    <fragment id="6">
+      <heading level="3">Communication and Intelligence</heading>
+      <heading level="4">Whale Songs</heading>
+      <para>Humpback whales produce some of the most complex vocalizations in the animal kingdom. These songs can last
+        up to 20 minutes and are repeated for hours at a time. Scientists believe these songs serve purposes related to
+        mating, navigation, and social bonding.
+      </para>
+      <heading level="4">Social Structures</heading>
+      <para>Many whale species demonstrate sophisticated social behaviors, living in family groups called pods. Orcas,
+        in particular, have distinct cultural traditions that are passed down through generations, including specialized
+        hunting techniques and unique dialects.
+      </para>
+    </fragment>
+    <fragment id="7">
+      <heading level="2">Conservation Challenges</heading>
+      <para>Whales face numerous threats in the modern ocean, including ship strikes, entanglement in fishing gear,
+        ocean noise pollution, and climate change. After being hunted to near extinction during the commercial whaling
+        era, many whale populations are slowly recovering thanks to international protection efforts.
+      </para>
+      <para>For more information about whale conservation, visit the <link
+          href="https://www.worldwildlife.org/species/whale" uriid="223772">World Wildlife Fund's whale conservation
+        page
+      </link> or explore research from the <link href="https://www.mmc.gov/" uriid="223773">Marine Mammal
+        Commission</link>.
+      </para>
+    </fragment>
+  </section>
+</document>

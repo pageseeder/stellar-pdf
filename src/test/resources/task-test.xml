@@ -1,0 +1,16 @@
+<project name="stellar-test" basedir="."
+         xmlns:stellar="antlib:org.pageseeder.stellar.ant"
+         default="test">
+
+  <target name="test-whale-default">
+    <stellar:export-pdf src="src/test/resources/psml/whales.psml"
+                        dest="build/test/out/ant_whales_default.pdf" />
+  </target>
+
+  <target name="test-whale-style">
+    <stellar:export-pdf src="src/test/resources/psml/whales.psml"
+                        dest="build/test/out/ant_whales_style.pdf"
+                        stylesheet="src/test/resources/css/whale.css"/>
+  </target>
+
+</project>
