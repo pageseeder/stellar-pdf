@@ -60,8 +60,8 @@ public class PdfExportTask extends Task {
     }
 
     try {
-      File input = new File(src);
-      File output = new File(dest);
+      File input = getProject().resolveFile(src);
+      File output = getProject().resolveFile(dest);
 
       ensureOutputDirectory(output.getParentFile());
 
@@ -105,7 +105,7 @@ public class PdfExportTask extends Task {
     PdfGenerator generator = new PdfGenerator();
 
     if (this.fontsDir != null) {
-      File fonts = new File(this.fontsDir);
+      File fonts = getProject().resolveFile(this.fontsDir);
       if (!fonts.exists()) {
         throw new BuildException("Font directory does not exist: " + fonts);
       }
@@ -113,7 +113,7 @@ public class PdfExportTask extends Task {
     }
 
     if (this.stylesheet != null) {
-      File authorStylesheet = new File(this.stylesheet);
+      File authorStylesheet = getProject().resolveFile(this.stylesheet);
       if (!authorStylesheet.exists()) {
         throw new BuildException("Stylesheet file does not exist: " + authorStylesheet);
       }
