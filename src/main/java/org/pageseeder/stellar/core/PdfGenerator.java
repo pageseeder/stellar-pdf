@@ -1,6 +1,7 @@
 package org.pageseeder.stellar.core;
 
 import com.lowagie.text.DocumentException;
+import org.eclipse.jdt.annotation.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -35,11 +36,11 @@ public class PdfGenerator {
 
   private int maxBookmarkLevel = 6;
 
-  private File fontsDir;
+  private @Nullable File fontsDir;
 
-  private String authorStylesheetUrl;
+  private @Nullable String authorStylesheetUrl;
 
-  private TitlePageConfig titlePageConfig;
+  private @Nullable TitlePageConfig titlePageConfig;
 
   public void setTitlePageConfig(TitlePageConfig config) {
     this.titlePageConfig = config;
@@ -89,7 +90,8 @@ public class PdfGenerator {
       // Augment the document
       TOC.injectLinks(doc, this.maxTocLevel);
       TitlePage.injectTitleFragment(doc, this.titlePageConfig);
-      CssClasses.addClasses(doc);
+      PsmlDecorator.addClasses(doc);
+      PsmlDecorator.addIds(doc);
 
       try {
         // To help debug

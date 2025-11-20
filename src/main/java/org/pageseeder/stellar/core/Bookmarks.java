@@ -3,10 +3,12 @@ package org.pageseeder.stellar.core;
 import com.lowagie.text.pdf.PdfDestination;
 import com.lowagie.text.pdf.PdfOutline;
 import com.lowagie.text.pdf.PdfWriter;
+import org.eclipse.jdt.annotation.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import org.xhtmlrenderer.css.style.CalculatedStyle;
 import org.xhtmlrenderer.pdf.DOMUtil;
 import org.xhtmlrenderer.pdf.ITextRenderer;
@@ -15,7 +17,9 @@ import org.xhtmlrenderer.render.InlineLayoutBox;
 import org.xhtmlrenderer.render.PageBox;
 import org.xhtmlrenderer.render.RenderingContext;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -24,12 +28,17 @@ import java.util.List;
  * @author Christophe Lauret
  *
  * @since 0.5.0
- * @version 0.5.2
+ * @version 0.7.0
  */
 public final class Bookmarks {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Bookmarks.class);
 
+  /**
+   * Represents the default maximum level of hierarchy for processing or extracting elements,
+   * such as bookmarks or table of contents (TOC) parts. This constant is used as a default
+   * when the maximum level is not explicitly provided.
+   */
   public static final int DEFAULT_MAX_LEVEL = 6;
 
   private final List<PsmlBookmark> list;
@@ -91,16 +100,79 @@ public final class Bookmarks {
   public static void loadBookmarks(Document doc, List<PsmlBookmark> bookmarks, int maxLevel) {
     Element toc = DOMUtil.getChild(doc.getDocumentElement(), "toc");
     if (toc != null) {
-      Element tree = DOMUtil.getChild(toc, "toc-tree");
-      if (tree != null) {
-        List<Element> parts = DOMUtil.getChildren(tree, "toc-part");
-        for (Element p : parts) {
-          loadBookmark(null, p, bookmarks, maxLevel);
+      loadBookmarksFromToc(toc, bookmarks, maxLevel);
+    } else {
+      loadBookmarksFromHeadings(doc, bookmarks, maxLevel);
+    }
+  }
+
+  private static void loadBookmarksFromToc(Element toc, List<PsmlBookmark> bookmarks, int maxLevel) {
+    Element tree = DOMUtil.getChild(toc, "toc-tree");
+    if (tree != null) {
+      List<Element> parts = DOMUtil.getChildren(tree, "toc-part");
+      for (Element p : parts) {
+        loadBookmark(null, p, bookmarks, maxLevel);
+      }
+    }
+  }
+
+  /**
+   * Populates a list of bookmarks by extracting headings from the given XML document.
+   *
+   * @param doc the XML document containing heading elements to be processed
+   * @param bookmarks the list to populate with extracted {@code PsmlBookmark} objects
+   * @param maxLevel the maximum heading level to be considered for bookmark extraction
+   */
+  private static void loadBookmarksFromHeadings(Document doc, List<PsmlBookmark> bookmarks, int maxLevel) {
+    try {
+      Deque<PsmlBookmark> stack = new ArrayDeque<>();
+      NodeList nodes = Utils.getNodes(doc, "//heading|//section/title");
+      for (int i = 0; i < nodes.getLength(); i++) {
+        Element element = (Element) nodes.item(i);
+        int level = Utils.getIntAttribute(element, "level", 3);
+        if (level <= maxLevel) {
+          PsmlBookmark bookmark = PsmlBookmark.fromHeading(element);
+          PsmlBookmark top = addBookmarkFromHeading(bookmark, stack, level);
+          if (top != null) {
+            bookmarks.add(top);
+          }
         }
       }
-    } else {
-      LOGGER.info("No TOC found");
+    } catch (Exception ex) {
+      LOGGER.error("Unable to extract bookmarks headings", ex);
     }
+  }
+
+  private static @Nullable PsmlBookmark addBookmarkFromHeading(PsmlBookmark bookmark, Deque<PsmlBookmark> stack, int level) {
+    // Ensure we go back to the right level
+    while (stack.size() >= level) {
+      stack.pop();
+    }
+    // Get the parent
+    PsmlBookmark parent = stack.peek();
+
+    // If level 1, return the bookmark
+    if (level == 1) {
+      stack.push(bookmark);
+      return bookmark;
+    }
+
+    // Otherwise, ensure we're at the right level
+    PsmlBookmark top = null;
+    while (level > stack.size()+1) {
+      PsmlBookmark ghost = new PsmlBookmark("", "");
+      if (parent != null) {
+        parent.addChild(ghost);
+      } else {
+        top = ghost;
+      }
+      stack.push(ghost);
+      parent = ghost;
+    }
+    stack.push(bookmark);
+    parent.addChild(bookmark);
+
+    return top;
   }
 
   /**
@@ -110,12 +182,8 @@ public final class Bookmarks {
    * @param part the TOC part from which the bookmark is to be extracted
    * @param bookmarks the list of bookmarks to populate
    */
-  private static void loadBookmark(PsmlBookmark parent, Element part, List<PsmlBookmark> bookmarks, int maxLevel) {
-    String prefix = part.getAttribute("prefix");
-    String title = Utils.normalizeSpace(part.getAttribute("title"));
-    String idref = part.getAttribute("idref");
-    String name = prefix.isEmpty() ? title : prefix + " " + title;
-    PsmlBookmark bookmark = new PsmlBookmark(name, idref);
+  private static void loadBookmark(@Nullable PsmlBookmark parent, Element part, List<PsmlBookmark> bookmarks, int maxLevel) {
+    PsmlBookmark bookmark = PsmlBookmark.fromPart(part);
     if (parent == null) {
       bookmarks.add(bookmark);
     } else {
@@ -174,4 +242,8 @@ public final class Bookmarks {
     return page.getHeight(c) - y;
   }
 
+  @Override
+  public String toString() {
+    return "Bookmarks=" + list;
+  }
 }
