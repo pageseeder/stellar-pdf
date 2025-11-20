@@ -1,5 +1,6 @@
 package org.pageseeder.stellar.ant;
 
+import org.apache.tools.ant.DynamicElement;
 import org.apache.tools.ant.Task;
 import org.apache.tools.ant.BuildException;
 import java.io.*;
@@ -8,7 +9,7 @@ import org.eclipse.jdt.annotation.Nullable;
 import org.pageseeder.stellar.core.PdfGenerator;
 import org.pageseeder.stellar.core.TitlePageConfig;
 
-public class PdfExportTask extends Task {
+public class PdfExportTask extends Task implements DynamicElement {
 
   private @Nullable String src;
 
@@ -51,6 +52,19 @@ public class PdfExportTask extends Task {
   // Support for nested <title-page> configuration
   public void addConfiguredTitlePage(TitlePageConfig config) {
     this.titlePageConfig = config;
+  }
+
+  /**
+   * Handle nested elements with names that aren't valid Java identifiers (e.g. "title-page").
+   */
+  @Override
+  public @Nullable Object createDynamicElement(String name) throws BuildException {
+    if ("title-page".equals(name)) {
+      TitlePageConfig config = new TitlePageConfig();
+      this.titlePageConfig = config;
+      return config;
+    }
+    return null;
   }
 
   @Override

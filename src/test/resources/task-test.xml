@@ -37,6 +37,10 @@
                         dest="out/ant_policy_styled.pdf"
                         stylesheet="src/css/policy.css"
                         fontsDir="src/fonts">
+      <title-page>
+        <item name="audience" xpath="//property[@name='audience'])[1]/@value" />
+        <item name="version" xpath="(//property[@name='revised_date'])[1]/@value" format="D MMM YYYY" />
+      </title-page>
     </stellar:export-pdf>
   </target>
 
