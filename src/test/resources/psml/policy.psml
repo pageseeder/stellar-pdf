@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document id="2147" schemaversion="1.4" date="2025-11-20T10:10:53+11:00" version="current" level="portable">
+  <documentinfo>
+    <uri id="2147" external="false" mediatype="application/vnd.pageseeder.psml+xml" created="2025-09-18T14:51:34+10:00"
+         modified="2025-11-20T10:10:53+11:00" scheme="http" host="localhost" port="80"
+         path="/ps/dev/samples/documents/policy.psml"
+         decodedpath="/ps/dev/samples/documents/policy.psml" title="Privacy policy">
+      <displaytitle>Privacy policy</displaytitle>
+    </uri>
+  </documentinfo>
+  <fragmentinfo structure-modified="2025-09-19T11:59:58+10:00">
+    <locator id="3649" fragment="11" editid="10816" modified="2025-09-18T14:54:04+10:00"/>
+    <locator id="3650" fragment="12" editid="10815" modified="2025-09-18T14:54:04+10:00"/>
+    <locator id="3651" fragment="13" editid="79848" modified="2025-11-20T10:10:53+11:00"/>
+    <locator id="3640" fragment="2" editid="10790" modified="2025-09-18T14:52:09+10:00"/>
+    <locator id="3641" fragment="3" editid="10813" modified="2025-09-18T14:54:04+10:00"/>
+    <locator id="3642" fragment="4" editid="10823" modified="2025-09-18T14:54:05+10:00"/>
+    <locator id="3643" fragment="5" editid="10822" modified="2025-09-18T14:54:05+10:00"/>
+    <locator id="3644" fragment="6" editid="10821" modified="2025-09-18T14:54:05+10:00"/>
+    <locator id="3645" fragment="7" editid="10820" modified="2025-09-18T14:54:04+10:00"/>
+    <locator id="3646" fragment="8" editid="10819" modified="2025-09-18T14:54:04+10:00"/>
+    <locator id="3647" fragment="9" editid="10818" modified="2025-09-18T14:54:04+10:00"/>
+    <locator id="3648" fragment="10" editid="10817" modified="2025-09-18T14:54:04+10:00"/>
+  </fragmentinfo>
+  <metadata/>
+  <section id="title">
+    <fragment id="1">
+      <heading level="1">Privacy policy</heading>
+    </fragment>
+  </section>
+  <section id="header">
+    <properties-fragment id="3">
+      <property name="audience" title="Audience" value="Public"/>
+      <property name="revised_date" title="Last revised" datatype="date" value="2025-10-14"/>
+    </properties-fragment>
+  </section>
+  <section id="content">
+    <fragment id="3">
+      <heading level="2" numbered="true">Information We Collect</heading>
+    </fragment>
+    <fragment id="2">
+      <heading level="2" numbered="true">Introduction</heading>
+      <para>XYZ Company ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how
+        we collect, use, disclose, and safeguard your information when you visit our website [<link unresolved="true"
+                                                                                                    href="http://www.xyzcompany.com%5D">
+          www.xyzcompany.com]
+        </link> and use our services.
+      </para>
+    </fragment>
+    <fragment id="4">
+      <heading level="3" numbered="true">Personal Information</heading>
+      <list>
+        <item>Contact information (name, email address, phone number, mailing address)</item>
+        <item>Account credentials</item>
+        <item>Payment information</item>
+        <item>Communication preferences</item>
+      </list>
+    </fragment>
+    <fragment id="5">
+      <heading level="3" numbered="true">Non-Personal Information</heading>
+      <list>
+        <item>Browser type and settings</item>
+        <item>Device information</item>
+        <item>IP address</item>
+        <item>Usage data</item>
+        <item>Cookies and similar technologies</item>
+      </list>
+    </fragment>
+    <fragment id="6">
+      <heading level="2" numbered="true">How We Use Your Information</heading>
+      <para>We may use the information we collect to:</para>
+      <list>
+        <item>Provide, maintain, and improve our services</item>
+        <item>Process transactions</item>
+        <item>Send administrative information</item>
+        <item>Send marketing communications</item>
+        <item>Respond to inquiries and provide customer support</item>
+        <item>Monitor and analyze usage patterns and trends</item>
+      </list>
+    </fragment>
+    <fragment id="7">
+      <heading level="2" numbered="true">Information Sharing</heading>
+      <para>We may share your information with:</para>
+      <list>
+        <item>Service providers who perform services on our behalf</item>
+        <item>Business partners with your consent</item>
+        <item>Legal authorities when required by law</item>
+        <item>In connection with a business transfer or merger</item>
+      </list>
+    </fragment>
+    <fragment id="8">
+      <heading level="2" numbered="true">Your Rights and Choices</heading>
+      <para>Depending on your location, you may have rights to:</para>
+      <list>
+        <item>Access personal information we hold about you</item>
+        <item>Correct inaccurate information</item>
+        <item>Delete your information</item>
+        <item>Object to certain processing activities</item>
+        <item>Withdraw consent</item>
+        <item>Opt-out of marketing communications</item>
+      </list>
+    </fragment>
+    <fragment id="9">
+      <heading level="2" numbered="true">Data Security</heading>
+      <para>We implement appropriate technical and organizational measures to protect your personal information.</para>
+    </fragment>
+    <fragment id="10">
+      <heading level="2" numbered="true">Data Retention</heading>
+      <para>We retain your personal information for as long as necessary to fulfill the purposes outlined in this
+        Privacy Policy, unless a longer retention period is required by law.
+      </para>
+    </fragment>
+    <fragment id="11">
+      <heading level="2" numbered="true">Children's Privacy</heading>
+      <para>Our services are not directed to children under 13 years of age, and we do not knowingly collect information
+        from children under 13.
+      </para>
+    </fragment>
+    <fragment id="12">
+      <heading level="2" numbered="true">Changes to This Privacy Policy</heading>
+      <para>We may update this Privacy Policy periodically. The updated version will be indicated by an updated "Last
+        revised" date.
+      </para>
+    </fragment>
+    <fragment id="13">
+      <heading level="2" numbered="true">Contact Us</heading>
+      <para>If you have questions about this Privacy Policy, please contact us at:</para>
+      <list>
+        <item>Email:
+          <link unresolved="true" href="mailto:privacy@xyzcompany.com">privacy@xyzcompany.com</link>
+        </item>
+        <item>Phone:
+          <bold>+61 491 570 006</bold>
+        </item>
+      </list>
+    </fragment>
+  </section>
+</document>

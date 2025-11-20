@@ -2,15 +2,42 @@
          xmlns:stellar="antlib:org.pageseeder.stellar.ant"
          default="test">
 
-  <target name="test-whale-default">
-    <stellar:export-pdf src="src/test/resources/psml/whales.psml"
-                        dest="build/test/out/ant_whales_default.pdf" />
+  <!--
+   Process the whale document with the default settings
+  -->
+  <target name="test-whales-default">
+    <stellar:export-pdf src="src/psml/whales.psml"
+                        dest="out/ant_whales_default.pdf" />
   </target>
 
-  <target name="test-whale-style">
-    <stellar:export-pdf src="src/test/resources/psml/whales.psml"
-                        dest="build/test/out/ant_whales_style.pdf"
-                        stylesheet="src/test/resources/css/whale.css"/>
+  <!--
+   Process the whale document with the custom styles
+  -->
+  <target name="test-whales-styled">
+    <stellar:export-pdf src="src/psml/whales.psml"
+                        dest="out/ant_whales_styled.pdf"
+                        stylesheet="src/css/whale.css"
+                        fontsDir="src/fonts" />
+  </target>
+
+
+  <!--
+   Process the policy document with the default settings
+  -->
+  <target name="test-policy-default">
+    <stellar:export-pdf src="src/psml/policy.psml"
+                        dest="out/ant_policy_default.pdf" />
+  </target>
+
+  <!--
+   Process the policy document with the custom styles
+  -->
+  <target name="test-policy-styled">
+    <stellar:export-pdf src="src/psml/policy.psml"
+                        dest="out/ant_policy_styled.pdf"
+                        stylesheet="src/css/policy.css"
+                        fontsDir="src/fonts">
+    </stellar:export-pdf>
   </target>
 
 </project>
