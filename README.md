@@ -6,6 +6,7 @@ Generate beautiful, print-ready PDFs from PSML documents with the Flying Saucer 
 
 - This project is licensed under the [Apache License, Version 2.0](LICENCE.md).
 - It depends on external libraries, including [Flying Saucer](https://github.com/flyingsaucerproject/flyingsaucer), which is licensed under the [GNU Lesser General Public License (LGPL)](https://www.gnu.org/licenses/lgpl-2.1.html).
+- This project includes fonts for testing purposes licenced under the SIL open font licence.
 
 ## Notices and Requirements for LGPL Libraries
 
@@ -38,6 +39,11 @@ To generate a PDF, this project uses two sets of files:
 
 This project is still in development and not yet ready for production.
 
+Here are some known limitations:
+- It does not support the `set-string` CSS property
+- It only generates the TOC if processed by PageSeeder
+- It does to compute the numbering headings and paragraphs.
+
 ## Stellar tasks
 
 ### `stellar:export-pdf`
@@ -51,6 +57,68 @@ This task generates a PDF from a PSML document. It supports the following attrib
 - `maxBookmarkLevel`: the max level of bookmarks to generate
 - `maxTocLevel`: the max level generate for the Table of Contents
 
+### Title page
+
+It also supports the following nested elements:
+
+ `<title-page>` with `<item>` elements to include the title page.
+
+Each `<item>` element can have the following attributes:`
+
+- `name`: the name of the item to include in the title page
+- `xpath`: the XPath expression to extract the value from the document
+- `format`: the date format using Java date formatting conventions
+
+For example:
+
+```xml
+  <title-page>
+    <item name="subtitle" xpath="//property[@name='subtitle']/@value"/>
+    <item name="pubdate" xpath="//property[@name='pubdate']/@value" format="d MMMM yyyy" />
+  </title-page>
+```
+
+The title page instruction injects contents into the **first section** of the document as
+a fragment with type `title-page`.
+
+```xml
+  <fragment id="title-page-1763706659718" type="title-page">
+     <block label="subtitle">An example of a subtitle</block>
+     <block label="subtitle">21 November 2025</block>
+  </fragment>
+```
+
+### Basic examples
+
+To process a PSML document and generate a PDF with the default CSS:
+
+```xml
+  <stellar:export-pdf src="example.psml" dest="example.pdf" />
+```
+
+To process a PSML document and generate a PDF with a custom CSS:
+
+```xml
+    <stellar:export-pdf src="example.psml"
+                        dest="example.pdf"
+                        stylesheet="example.css"
+                        fontsDir="fonts" />
+```
+
+To process a PSML document and generate a PDF with a custom title page:
+
+```xml
+    <stellar:export-pdf src="example.psml"
+                        dest="example.pdf"
+                        stylesheet="example.css"
+                        fontsDir="fonts">
+      <title-page>
+        <item name="revised_date" xpath="(//property[@name='revised_date'])[1]/@value" format="d MMMM YYYY" />
+      </title-page>
+    </stellar:export-pdf>
+```
+
+You can find more examples in the [test resource folder](src/test/resources).
 
 ## PageSeeder usage
 
