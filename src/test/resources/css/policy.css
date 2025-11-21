@@ -9,21 +9,20 @@
         content: element(title);
         font-family: 'Inter 18pt', 'Arial', sans-serif;
         font-size: 9pt;
-        color: #ea007e;
+        color: #0376BB;
     }
 
     @bottom-left {
-        border-top: .25mm solid #ea007e;
-        /*background: url("images/allette-logo-red.png") no-repeat 0 6mm;*/
-        background-size: 24mm auto;
-        width: 24mm;
-        color: #ea007e;
+        border-top: .25mm solid #0376BB;
+        background: url("images/example-logo.png") no-repeat 0 6mm;
+        background-size: 30mm auto;
+        width: 30mm;
         padding-left: 21mm;
         content: '';
     }
 
     @bottom-right {
-        border-top: .25mm solid #ea007e;
+        border-top: .25mm solid #0376BB;
         margin: 5mm 0 10mm 0;
         content: "Page " counter(page) " of " counter(pages);
         font-family: 'Inter 18pt', 'Arial', sans-serif;
@@ -41,7 +40,7 @@ document {
 documentinfo > uri > displaytitle {
     position: running(title);
     text-align: left;
-    color: #ea007e;
+    color: #0376BB;
 }
 
 documentinfo > uri > description,
@@ -56,7 +55,7 @@ blockxref documentinfo {
 /* Title page -------------------- */
 
 @page:first {
-    /*background-image: url(images/title-cover-policy.png);*/
+    background-image: url(images/example-cover.png);
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 210mm 297mm;
@@ -67,12 +66,12 @@ blockxref documentinfo {
     @bottom-right {  content: none; }
 }
 
-section[id$='-title'] {
+section[id='title'] {
    height: 245mm;
    position: relative;
 }
 
-section[id$='-title']::after {
+section[id='title']::after {
     content: '';
     position: absolute;
     bottom: -5mm;
@@ -80,36 +79,32 @@ section[id$='-title']::after {
     display: block;
     height: 30mm;
     width: 66mm;
-    /*background-image: url(images/allette-logo-white.png);*/
+    background-image: url(images/example-logo-white.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom right;
 }
 
-blockxref section[id$='-title']::after {
-    content: none;
-}
-
 heading[level='1'] {
-    color: #3e0021;
+    color: #004D81;
     padding: 7cm 0 0;
-    font-weight: 300;
+    font-weight: bold;
 }
 
-block[label='pdf-date'] {
-    color: #ea007e;
+block[label='revised_date'] {
+    color: #0376BB;
     font-size: 15pt;
-    font-weight: 300;
+    text-transform: uppercase;
 }
 
 /* TOC -------------------- */
 
 toc-tree::before {
-    color: #3e0021;
+    color: #004D81;
 }
 
 toc-part link::before {
-    color: #ea007e;
+    color: #0376BB;
 }
 
 /* Content ---------------- */
@@ -126,14 +121,33 @@ blockxref section[id$='-content'] {
 
 /* Headings and paragraphs -------------------- */
 
-heading[prefix] {
-    color: #3e0021;
+heading {
+    color: #004D81;
+}
+
+heading[level='2'] {
+    margin-top: 1.5em;
+}
+
+heading[level='3'] {
+    color: #0376BB;
+}
+
+heading[level='3']::before {
+    content: '\00a0';
+    width: .5em;
+    height: .5em;
+    background-color: #0376BB;
+    display: inline-block;
+    margin-right: .25em;
+    position: relative;
+    top: .5em;
 }
 
 heading[prefix]::before,
 para[prefix][indent]::before {
     content: attr(prefix) ' \00a0';
-    color: #ea007e;
+    color: #0376BB;
     display: inline-block;
 }
 
@@ -157,27 +171,6 @@ para[prefix][indent='2']{
     margin-left: 12mm
 }
 
-/* Tables -------------------- */
-
-table,
-table cell,
-table hcell {
-    border-color: #ea007e;
-}
-
-table row[part='header'] cell,
-table row[part='header'] hcell {
-    background-color: #ea007e;
-}
-
-/* Labels ------------- */
-
-inline[label='ISO'],
-inline[label='ISM'],
-inline[label='SAMM'] {
-    display: none;
-}
-
-block[label='TODO'] {
-    display: none;
+list {
+    list-style-type: square;
 }

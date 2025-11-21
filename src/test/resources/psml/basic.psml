@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document id="3457" schemaversion="1.4" date="2025-11-20T21:44:12+11:00" version="current" level="portable">
+  <documentinfo>
+    <uri id="3457" external="false" mediatype="application/vnd.pageseeder.psml+xml" created="2025-11-20T21:31:48+11:00"
+         modified="2025-11-20T21:44:12+11:00" scheme="http" host="localhost" port="80"
+         path="/ps/dev/samples/documents/basic.psml"
+         decodedpath="/ps/dev/samples/documents/basic.psml" title="BASIC Programming Tutorial">
+      <displaytitle>BASIC Programming Tutorial</displaytitle>
+    </uri>
+  </documentinfo>
+  <fragmentinfo structure-modified="2025-11-20T21:39:17+11:00">
+    <locator id="6113" fragment="1" editid="79941" modified="2025-11-20T21:43:57+11:00"/>
+    <locator id="6102" fragment="2" editid="79934" modified="2025-11-20T21:40:00+11:00"/>
+    <locator id="6103" fragment="3" editid="79935" modified="2025-11-20T21:40:00+11:00"/>
+    <locator id="6104" fragment="4" editid="79936" modified="2025-11-20T21:40:00+11:00"/>
+    <locator id="6105" fragment="5" editid="79937" modified="2025-11-20T21:40:00+11:00"/>
+    <locator id="6106" fragment="6" editid="79938" modified="2025-11-20T21:40:00+11:00"/>
+    <locator id="6107" fragment="7" editid="79931" modified="2025-11-20T21:40:00+11:00"/>
+    <locator id="6108" fragment="8" editid="79932" modified="2025-11-20T21:40:00+11:00"/>
+    <locator id="6109" fragment="9" editid="79922" modified="2025-11-20T21:37:41+11:00"/>
+    <locator id="6110" fragment="10" editid="79921" modified="2025-11-20T21:37:41+11:00"/>
+    <locator id="6111" fragment="11" editid="79914" modified="2025-11-20T21:37:40+11:00"/>
+    <locator id="6112" fragment="12" editid="79942" modified="2025-11-20T21:44:12+11:00"/>
+  </fragmentinfo>
+  <metadata/>
+  <section id="title">
+    <fragment id="1">
+      <heading level="1">BASIC Programming Tutorial</heading>
+      <para>
+        <italic>Hello World Examples and Fundamentals</italic>
+      </para>
+    </fragment>
+  </section>
+  <section id="content">
+    <fragment id="12">
+      <heading level="2">Getting Started with "Hello World" in BASIC</heading>
+    </fragment>
+    <fragment id="2">
+      <heading level="3" prefix="1)">Very first BASIC (line-number style)</heading>
+      <para>This is the classic form you might see in old BASICs (GW-BASIC, QBasic, TRS-80 BASIC):</para>
+      <preformat>10 PRINT "HELLO, WORLD!"
+        20 END
+      </preformat>
+      <list>
+        <item><monospace>PRINT</monospace> displays text on the screen.</item>
+        <item>Line numbers (10, 20) were used for ordering and <monospace>GOTO</monospace>/<monospace>GOSUB</monospace>.
+        </item>
+        <item><monospace>END</monospace> stops the program.</item>
+      </list>
+    </fragment>
+    <fragment id="3">
+      <heading level="3" prefix="2)">Modern QBASIC / FreeBASIC (no line numbers needed)</heading>
+      <para>Most hobby BASICs allow simple scripts:</para>
+      <preformat>PRINT "Hello, World!"</preformat>
+      <para>Run it in QBASIC/FreeBASIC and the message appears.</para>
+    </fragment>
+    <fragment id="4">
+      <heading level="3" prefix="3)">Asking the user for their name (interactive)</heading>
+      <preformat>INPUT "What is your name? "; name$
+PRINT "Hello, " + name$ + "!"
+</preformat>
+      <list>
+        <item><monospace>INPUT</monospace> prompts and stores input in a string variable (convention: <monospace>$</monospace> suffix for strings in many BASICs).</item>
+        <item><monospace>+</monospace> concatenates strings in some dialects; in others <monospace>PRINT "Hello, "; name$</monospace> works (note the semicolon).</item>
+      </list>
+    </fragment>
+    <fragment id="5">
+      <heading level="3" prefix="4)">Looping the message</heading>
+      <preformat>FOR i = 1 TO 5
+  PRINT "Hello number"; i
+NEXT i
+</preformat>
+      <list>
+        <item><monospace>FOR ... TO ... NEXT</monospace> repeats a block.</item>
+        <item><monospace>;</monospace> after <monospace>PRINT</monospace> joins printed items with a space in many BASICs.</item>
+      </list>
+    </fragment>
+    <fragment id="6">
+      <heading level="3" prefix="5)">Conditional hello</heading>
+      <preformat>INPUT "Do you want a greeting (Y/N)? "; ans$
+IF UCASE$(ans$) = "Y" THEN
+  PRINT "Hello there!"
+ELSE
+  PRINT "OK, goodbye."
+END IF
+</preformat>
+      <list>
+        <item><monospace>IF ... THEN ... ELSE</monospace> controls flow.</item><item><monospace>UCASE$</monospace> converts to uppercase (dialect-dependent).</item>
+      </list>
+    </fragment>
+    <fragment id="7">
+      <heading level="3" prefix="6)">Using a subroutine (GOSUB) – classic style</heading>
+      <preformat>10 GOSUB 100
+20 END
+100 PRINT "Hello from subroutine!"
+110 RETURN
+</preformat>
+      <list>
+        <item><monospace>GOSUB</monospace> jumps to a subroutine line; <monospace>RETURN</monospace> comes back.</item>
+        <item>Modern dialects prefer <monospace>SUB</monospace>/<monospace>FUNCTION</monospace> instead.</item>
+      </list>
+    </fragment>
+    <fragment id="8">
+      <heading level="3" prefix="7)">VB.NET console example (Visual Basic – .NET)</heading>
+      <para>If you’re using Visual Basic .NET (different but related language):</para>
+      <preformat>Module Program
+    Sub Main()
+        Console.WriteLine("Hello, World!")
+    End Sub
+End Module
+</preformat>
+      <list>
+        <item>Use Visual Studio or <monospace>dotnet</monospace> tools to run <monospace>.vb</monospace> projects.</item>
+      </list>
+    </fragment>
+    <fragment id="9"><heading level="2">Quick Reference (commands)</heading><table><row part="header"><cell>Command</cell><cell>Purpose</cell></row><row><cell><monospace>PRINT</monospace></cell><cell>Display text or variables</cell></row><row><cell><monospace>INPUT</monospace></cell><cell>Read user input</cell></row><row><cell><monospace>LET</monospace></cell><cell>Assign a value (often optional)</cell></row><row><cell><monospace>IF ... THEN ... ELSE</monospace></cell><cell>Conditional branching</cell></row><row><cell><monospace>FOR ... NEXT</monospace></cell><cell>Loop with counter</cell></row><row><cell><monospace>WHILE ... WEND</monospace></cell><cell>Loop while condition true (some dialects)</cell></row><row><cell><monospace>GOTO</monospace>, <monospace>GOSUB</monospace>, <monospace>RETURN</monospace></cell><cell>Old-style jumps/subroutines</cell></row><row><cell><monospace>SUB</monospace> / <monospace>FUNCTION</monospace></cell><cell>Modern subroutines / functions (VB.NET, FreeBASIC)</cell></row><row><cell><monospace>REM</monospace> or <monospace>'</monospace></cell><cell>Comment</cell></row></table></fragment><fragment id="10"><heading level="2">Notes &amp; common pitfalls</heading><list><item>
+<para><bold>Dialect differences:</bold> BASIC has many dialects (QBASIC, FreeBASIC, Visual Basic .NET, BBC BASIC, etc.). Syntax for string concatenation, functions and program structure can vary.</para>
+</item><item>
+<para><bold>Strings vs numbers:</bold> In older BASICs strings often have a <monospace>$</monospace> suffix (e.g., <monospace>name$</monospace>). If you forget this you may get a type error.</para>
+</item><item>
+<para><bold>Line numbers:</bold> Modern BASICs usually don’t require them; they’re only for older interpreters.</para>
+</item><item>
+<para><bold>Case sensitivity:</bold> BASIC is usually <bold>not</bold> case-sensitive for keywords (<monospace>print</monospace>, <monospace>PRINT</monospace> both work) but string comparisons may be case-sensitive unless you normalize (e.g., <monospace>UCASE$</monospace>).</para>
+</item><item>
+<para><bold>Running old BASIC:</bold> To run QBASIC/GW-BASIC on modern OSes you may need DOSBox or an interpreter/emulator. FreeBASIC is a modern compiler that runs on modern systems.</para>
+</item></list></fragment><fragment id="11"><heading level="2">Short examples to copy-paste</heading><para>Classic:</para><preformat>10 PRINT "HELLO, WORLD!"
+20 END
+</preformat><para>Interactive:</para><preformat>INPUT "Your name: "; user$
+PRINT "Hello, "; user$; " — welcome!"
+</preformat><para>VB.NET:</para>
+    <preformat>Module Program
+    Sub Main()
+        Console.WriteLine("Hello, World!")
+    End Sub
+End Module</preformat>
+      <block label="warning">
+        <para>⚠️ Do not assume code from one BASIC dialect will run unchanged in another. If you copy an example and get syntax errors, check which BASIC dialect/interpreter you’re using and consult that dialect’s quick reference.</para>
+      </block>
+    </fragment>
+  </section>
+</document>

@@ -1,0 +1,147 @@
+/**
+ * Build-in PSML styles
+ */
+
+@page {
+
+    @top-center {
+        margin: 10mm 0 5mm 0;
+        content: element(title);
+        font-family: 'Inter 18pt', 'Arial', sans-serif;
+        font-size: 9pt;
+        color: #008995;
+    }
+
+    @bottom-center {
+        margin: 5mm 0 10mm 0;
+        content: "Page " counter(page) " of " counter(pages);
+        font-family: 'Inter 18pt', 'Arial', sans-serif;
+        font-size: 9pt;
+        color: #008995;
+    }
+
+}
+
+document {
+    font-family: 'Inter 18pt', 'Helvetica', sans-serif;
+    font-size: 10pt;
+}
+
+documentinfo > uri > * {
+    display: none;
+}
+
+documentinfo > uri > displaytitle {
+    display: inline;
+    position: running(title);
+    text-align: center;
+    color: #008995;
+}
+
+metadata {
+    display: block;
+}
+metadata property{
+    display: none;
+}
+
+metadata property[name='authors'] {
+    display: inline;
+    position: running(authors);
+    /*text-align: right;*/
+    /*color: #008995;*/
+}
+
+/* Title page -------------------- */
+
+@page:first {
+    background-image: url(images/turtles-cover.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 210mm 297mm;
+
+    @top-center { content: none; }
+    @bottom-center { content: none; }
+}
+
+section[id='title'] {
+   height: 245mm;
+   position: relative;
+}
+
+heading[level='1'] {
+    color: white;
+    font-weight: bold;
+    font-size: 56pt;
+    margin: 0;
+    padding: 1cm 0;
+    text-shadow: 0 0 1mm #00464c;
+    string-set: title-text content();
+}
+
+block[label='subtitle'] {
+    color: #86eaf3;
+    font-family: 'Amatic', sans-serif;
+    font-size: 38pt;
+    position: absolute;
+    top: 20cm;
+}
+
+block[label='authors'] {
+    color: white;
+    font-size: 13pt;
+    position: absolute;
+    text-transform: uppercase;
+    top: 22cm;
+}
+
+/* Content ---------------- */
+
+heading[level='2'] {
+    color: #00464c;
+    margin-top: 1em;
+}
+
+heading[level='3'] {
+    color: #005f67;
+    margin-top: .5em;
+}
+
+heading[level='3']::before {
+    content: '\00a0';
+    width: .5em;
+    height: .5em;
+    background-color: #018b97;
+    display: inline-block;
+    margin-right: .25em;
+    position: relative;
+    top: .5em;
+    border-radius: 0 50%;
+}
+
+/* Tables -------------------- */
+
+table,
+table cell,
+table hcell {
+    border-color: #008995;
+    border-left: 0 none;
+    border-right: 0 none;
+}
+
+table row[part='header'] cell,
+table row[part='header'] hcell {
+    background-color: #008995;
+    color: white;
+}
+
+/* Labels ------------- */
+
+block[label='warning'] {
+    display: block;
+    background-color: #c8f4f8;
+    border-radius: 0 5mm;
+    padding: 2mm;
+    /*font-family: 'Inter 18pt', 'NotoEmoji', sans-serif;*/
+    font-family: 'Noto', 'Inter 18pt', sans-serif;
+}

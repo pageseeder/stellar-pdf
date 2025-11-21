@@ -80,6 +80,27 @@ final class PdfExportTaskTest {
   }
 
   @Test
+  void testAntBuildFile_Turtles_Default() {
+    runAntTarget("test-turtles-default", "build/test/out/ant_turtles_default.pdf");
+  }
+
+  @Test
+  void testAntBuildFile_Turtles_Styled() {
+    runAntTarget("test-turtles-styled", "build/test/out/ant_turtles_styled.pdf");
+  }
+
+  @Test
+  void testAntBuildFile_Basic_Default() {
+    runAntTarget("test-basic-default", "build/test/out/ant_basic_default.pdf");
+  }
+
+  @Test
+  void testAntBuildFile_Basic_Styled() {
+    runAntTarget("test-basic-styled", "build/test/out/ant_basic_styled.pdf");
+  }
+
+
+  @Test
   void testMissingDest() {
     PdfExportTask task = new PdfExportTask();
     task.setProject(newProject());

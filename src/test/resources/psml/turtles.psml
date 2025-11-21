@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document id="3456" schemaversion="1.4" date="2025-11-20T21:28:59+11:00" version="current" level="portable">
+  <documentinfo>
+    <uri id="3456" external="false" mediatype="application/vnd.pageseeder.psml+xml" created="2025-11-20T21:24:49+11:00"
+         modified="2025-11-20T21:28:59+11:00" scheme="http" host="localhost" port="80"
+         path="/ps/dev/samples/documents/turtles.psml"
+         decodedpath="/ps/dev/samples/documents/turtles.psml" title="Turtles of the Galápagos">
+      <displaytitle>Turtles of the Galápagos</displaytitle>
+    </uri>
+  </documentinfo>
+  <fragmentinfo structure-modified="2025-11-20T21:26:50+11:00">
+    <locator id="6097" fragment="9" editid="79882" modified="2025-11-20T21:28:17+11:00"/>
+    <locator id="6098" fragment="10" editid="79875" modified="2025-11-20T21:28:16+11:00"/>
+    <locator id="6099" fragment="11" editid="79883" modified="2025-11-20T21:28:17+11:00"/>
+    <locator id="6100" fragment="12" editid="79884" modified="2025-11-20T21:28:18+11:00"/>
+    <locator id="6090" fragment="2" editid="79854" modified="2025-11-20T21:25:09+11:00"/>
+    <locator id="6091" fragment="3" editid="79887" modified="2025-11-20T21:28:55+11:00"/>
+    <locator id="6092" fragment="4" editid="79878" modified="2025-11-20T21:28:17+11:00"/>
+    <locator id="6093" fragment="5" editid="79877" modified="2025-11-20T21:28:17+11:00"/>
+    <locator id="6094" fragment="6" editid="79889" modified="2025-11-20T21:28:59+11:00"/>
+    <locator id="6095" fragment="7" editid="79880" modified="2025-11-20T21:28:17+11:00"/>
+    <locator id="6096" fragment="8" editid="79881" modified="2025-11-20T21:28:17+11:00"/>
+  </fragmentinfo>
+  <metadata editid="10939" modified="2025-09-27T11:37:31+10:00">
+    <properties>
+      <property name="subject" title="Subject" value="A comprehensive overview of turtle species found in the Galápagos Islands, focusing on the iconic Galápagos giant tortoise and Green sea turtle. The document covers their ecological roles, conservation status, major threats including habitat loss and invasive species, and ongoing conservation efforts such as captive breeding programs and marine protection zones. Essential reference for understanding the importance of these species to the Galápagos ecosystem and current wildlife protection initiatives."/>
+      <property name="keywords" title="Keywords" multiple="true">
+        <value>Galápagos Islands</value>
+        <value>giant tortoise</value>
+        <value>Chelonoidis nigra</value>
+        <value>Green sea turtle</value>
+        <value>Chelonia mydas</value>
+        <value>marine turtles</value>
+        <value>conservation</value>
+        <value>endangered species</value>
+        <value>Ecuador</value>
+        <value>archipelago</value>
+        <value>reptiles</value>
+        <value>wildlife</value>
+        <value>ecosystem</value>
+        <value>habitat protection,</value>
+        <value>breeding programs</value>
+        <value>Pacific Ocean</value>
+        <value>endemic species</value>
+        <value>biodiversity</value>
+        <value>tortoise subspecies</value>
+        <value>marine reserves</value>
+      </property>
+      <property name="subtitle" title="Subtitle" value="Giants of Land and Sea in an Island Paradise"/>
+      <property name="authors" title="Authors" multiple="true">
+        <value>Alicia Kingsford-Smith</value>
+        <value>Paul Duval</value>
+      </property>
+    </properties>
+  </metadata>
+  <section id="title">
+    <fragment id="1">
+      <heading level="1">Turtles of the Galápagos</heading>
+    </fragment>
+  </section>
+  <section id="content">
+    <fragment id="2">
+      <heading level="2">
+        <bold>Introduction</bold>
+      </heading>
+      <para>The Galápagos Islands are home to some of the world’s most iconic turtle species, most notably the <bold>
+        Galápagos giant tortoise
+      </bold> (<italic>Chelonoidis nigra</italic> complex) and several species of <bold>marine turtles</bold>, including
+        the <bold>Green sea turtle</bold> (<italic>Chelonia mydas</italic>). These species play crucial ecological roles
+        and serve as symbols of conservation efforts across the archipelago.
+      </para>
+    </fragment>
+    <fragment id="3">
+      <heading level="2">
+        <bold>Key Species</bold>
+      </heading>
+    </fragment>
+    <fragment id="4">
+      <heading level="3">
+        <bold>Galápagos Giant Tortoise</bold>
+      </heading>
+      <list>
+        <item>Largest living tortoise on Earth</item>
+        <item>Can live over 100 years</item>
+        <item>Known for distinct shell shapes (domed or saddle-backed)</item>
+      </list>
+    </fragment>
+    <fragment id="5">
+      <heading level="3">
+        <bold>Green Sea Turtle</bold>
+      </heading>
+      <list>
+        <item>Only sea turtle species that nests in the Galápagos</item>
+        <item>Primarily herbivorous</item>
+        <item>Migratory, traveling long distances across the Pacific</item>
+      </list>
+    </fragment>
+    <fragment id="6">
+      <heading level="2">
+        <bold>Ecological Importance</bold>
+      </heading>
+      <para>Galápagos turtles contribute to ecosystem health by:</para>
+      <list>
+        <item>Dispersing seeds</item>
+        <item>Maintaining vegetation through grazing</item>
+        <item>
+          <para>Influencing landscape structure through movement patterns</para>
+        </item>
+      </list>
+      <para>Marine turtles help maintain healthy seagrass beds and coral reef systems.</para>
+    </fragment>
+    <fragment id="7">
+      <heading level="2">
+        <bold>Threats and Conservation</bold>
+      </heading>
+    </fragment>
+    <fragment id="8">
+      <heading level="3">
+        <bold>Major Threats</bold>
+      </heading>
+      <list>
+        <item>Habitat loss</item>
+        <item>Invasive species (rats, pigs, goats)</item>
+        <item>Illegal hunting (historically)</item>
+        <item>Plastic pollution and fishing bycatch (for marine turtles)</item>
+        <item>Climate change impacting nesting success</item>
+      </list>
+    </fragment>
+    <fragment id="9">
+      <heading level="3">
+        <bold>Conservation Actions</bold>
+      </heading>
+      <list>
+        <item>Captive breeding and reintroduction</item>
+        <item>Predator control and eradication programs</item>
+        <item>Nest monitoring and protection</item>
+        <item>
+          <para>Marine reserves and regulated fishing zones</para>
+        </item>
+      </list>
+    </fragment>
+    <fragment id="10">
+      <heading level="2">
+        <bold>Quick Reference Table</bold>
+      </heading>
+      <table>
+        <col part="header"/>
+        <col/>
+        <col/>
+        <col/>
+        <row part="header">
+          <cell>Species</cell>
+          <cell>Habitat</cell>
+          <cell>Status</cell>
+          <cell>Notable Traits</cell>
+        </row>
+        <row>
+          <hcell>Galápagos Giant Tortoise</hcell>
+          <cell>Terrestrial, highlands &amp; arid zones</cell>
+          <cell>Vulnerable/endangered depending on subspecies</cell>
+          <cell>Massive size, long lifespan</cell>
+        </row>
+        <row>
+          <hcell>Green Sea Turtle</hcell>
+          <cell>Coastal waters, beaches</cell>
+          <cell>Endangered</cell>
+          <cell>Only Galápagos-nesting sea turtle</cell>
+        </row>
+      </table>
+    </fragment>
+    <fragment id="11">
+      <heading level="2">
+        <bold>Notes</bold>
+      </heading>
+      <list>
+        <item>The archipelago once hosted <bold>15 tortoise species</bold>, though several are now extinct.
+        </item>
+        <item>Some populations have been successfully restored through breeding programs.</item>
+        <item>
+          <para>Sea turtles in the Galápagos are sometimes seen resting near mangroves and rocky shorelines.</para>
+        </item>
+      </list>
+    </fragment>
+    <fragment id="12">
+      <block label="warning">
+        <para>⚠️
+          <bold>Visitors to the Galápagos must not touch or approach turtles.</bold>
+        </para>
+        <para>Human disturbance can cause nest abandonment, stress, or interference with natural behavior. Maintain
+          distance and follow guidelines set by the Galápagos National Park.
+        </para>
+      </block>
+    </fragment>
+  </section>
+</document>

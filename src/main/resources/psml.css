@@ -25,7 +25,7 @@ section, fragment {
 
 /* Table of contents */
 
-toc {
+toc[toc-tree] {
     display: block;
     page-break-before: always;
     page-break-after: always;
@@ -69,10 +69,12 @@ toc-part[level='1']>link {
 /* Heading styles */
 
 heading, section > title {
+    color: #222;
     display: block;
-    font-size: 16pt;
     font-weight: bold;
-    /*margin: 18pt 0 8pt 0;*/
+    line-height: 1.25;      /* Tighter line height for headings */
+    margin-top: 1.5em;      /* Clear separation from preceding content */
+    margin-bottom: 0.5em;   /* Closer relationship to following content */
     page-break-after: avoid;
 }
 
@@ -98,12 +100,17 @@ heading[level='5'] {
     font-weight: bold;
 }
 
+heading[level='6'] {
+    text-transform: uppercase; /* Differentiates small headers */
+    letter-spacing: 0.05em;
+}
+
 /* Paragraph styles */
 
 para {
     display: block;
-    margin-bottom: 8pt;
-    line-height: 1.5;
+    margin-bottom: 1em; /* Space equal to font-size after paragraph */
+    line-height: 1.5;   /* Comfortable reading height */
 }
 
 para[indent='1'] {
@@ -134,12 +141,14 @@ para[prefix]::before {
 
 list, nlist {
     display: block;
-    margin: 8pt 0 8pt 24pt;
-    padding-left: 12pt;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-left: 2em;    /* Indentation for bullets/numbers */
 }
 
 list {
-    list-style-type: circle;
+    list-style-type: disc;
 }
 
 nlist {
@@ -148,7 +157,28 @@ nlist {
 
 item {
     display: list-item;
-    margin-bottom: 4pt;
+    margin-bottom: .25em; /* Slight separation between items */
+}
+
+/* Remove bottom margin for nested lists */
+list list, nlist nlist, list nlist, nlist list {
+    margin-bottom: 0;
+}
+
+list list {
+    list-style-type: circle;
+}
+
+list list list {
+    list-style-type: square;
+}
+
+nlist nlist {
+    list-style-type: lower-alpha;
+}
+
+nlist nlist nlist {
+    list-style-type: lower-roman;
 }
 
 /* Table styles */
@@ -173,7 +203,9 @@ col {
     display: none;
 }
 
-hcell {
+hcell,
+row[part='header'] cell,
+row[part='header'] hcell {
     font-weight: bold;
 }
 
@@ -186,8 +218,17 @@ hcell, cell {
 /* Other */
 
 preformat {
-    white-space: pre
+    display: block;
+    font-family: monospace;
+    margin-bottom: 1em; /* Space equal to font-size after paragraph */
+    white-space: pre-wrap;
 }
+
+block {
+    display: block;
+    margin-bottom: 1em; /* Space equal to font-size after paragraph */
+}
+
 
 /* This should automatically be replaced in PDF */
 image {

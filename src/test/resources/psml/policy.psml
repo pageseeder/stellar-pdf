@@ -29,23 +29,24 @@
     </fragment>
   </section>
   <section id="header">
-    <properties-fragment id="3">
+    <properties-fragment id="header">
       <property name="audience" title="Audience" value="Public"/>
       <property name="revised_date" title="Last revised" datatype="date" value="2025-10-14"/>
     </properties-fragment>
   </section>
+  <toc/>
   <section id="content">
-    <fragment id="3">
-      <heading level="2" numbered="true">Information We Collect</heading>
-    </fragment>
     <fragment id="2">
       <heading level="2" numbered="true">Introduction</heading>
-      <para>XYZ Company ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how
+      <para>Example Inc ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how
         we collect, use, disclose, and safeguard your information when you visit our website [<link unresolved="true"
                                                                                                     href="http://www.xyzcompany.com%5D">
           www.xyzcompany.com]
         </link> and use our services.
       </para>
+    </fragment>
+    <fragment id="3">
+      <heading level="2" numbered="true">Information We Collect</heading>
     </fragment>
     <fragment id="4">
       <heading level="3" numbered="true">Personal Information</heading>
@@ -127,7 +128,7 @@
       <para>If you have questions about this Privacy Policy, please contact us at:</para>
       <list>
         <item>Email:
-          <link unresolved="true" href="mailto:privacy@xyzcompany.com">privacy@xyzcompany.com</link>
+          <link unresolved="true" href="mailto:privacy@example.com">privacy@example.com</link>
         </item>
         <item>Phone:
           <bold>+61 491 570 006</bold>
