@@ -4,6 +4,9 @@ with Reserved Font Name "Inter".
 Copyright (c) 2013 Google LLC,
 with Reserved Font Name "Noto".
 
+Copyright (c) 2011 by vernon adams (vern@newtypography.co.uk),
+with Reserved Font Names “Amatic” “Amatic Bold” and “Amatic Regular”
+
 This Font Software is licensed under the SIL Open Font License, Version 1.1.  
 This license is copied below, and is also available with a FAQ at:  
 https\://openfontlicense.org  
