@@ -99,7 +99,7 @@ public final class Bookmarks {
    */
   public static void loadBookmarks(Document doc, List<PsmlBookmark> bookmarks, int maxLevel) {
     Element toc = DOMUtil.getChild(doc.getDocumentElement(), "toc");
-    if (toc != null) {
+    if (toc != null && toc.hasChildNodes()) {
       loadBookmarksFromToc(toc, bookmarks, maxLevel);
     } else {
       loadBookmarksFromHeadings(doc, bookmarks, maxLevel);
