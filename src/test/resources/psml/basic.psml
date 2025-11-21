@@ -39,7 +39,7 @@
       <heading level="3" prefix="1)">Very first BASIC (line-number style)</heading>
       <para>This is the classic form you might see in old BASICs (GW-BASIC, QBasic, TRS-80 BASIC):</para>
       <preformat>10 PRINT "HELLO, WORLD!"
-        20 END
+20 END
       </preformat>
       <list>
         <item><monospace>PRINT</monospace> displays text on the screen.</item>

@@ -80,6 +80,16 @@ final class PdfExportTaskTest {
   }
 
   @Test
+  void testAntBuildFile_PolicyProcessed_Default() {
+    runAntTarget("test-policy-processed-default", "build/test/out/ant_policy-processed_default.pdf");
+  }
+
+  @Test
+  void testAntBuildFile_PolicyProcessed_Style() {
+    runAntTarget("test-policy-processed-styled", "build/test/out/ant_policy-processed_styled.pdf");
+  }
+
+  @Test
   void testAntBuildFile_Turtles_Default() {
     runAntTarget("test-turtles-default", "build/test/out/ant_turtles_default.pdf");
   }

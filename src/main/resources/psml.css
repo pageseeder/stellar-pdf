@@ -25,7 +25,11 @@ section, fragment {
 
 /* Table of contents */
 
-toc[toc-tree] {
+toc {
+    display: block;
+}
+
+toc-tree {
     display: block;
     page-break-before: always;
     page-break-after: always;

@@ -20,7 +20,6 @@
                         fontsDir="src/fonts" />
   </target>
 
-
   <!--
    Process the policy document with the default settings
   -->
@@ -35,6 +34,22 @@
   <target name="test-policy-styled">
     <stellar:export-pdf src="src/psml/policy.psml"
                         dest="out/ant_policy_styled.pdf"
+                        stylesheet="src/css/policy.css"
+                        fontsDir="src/fonts">
+      <title-page>
+        <item name="revised_date" xpath="(//property[@name='revised_date'])[1]/@value" format="d MMMM YYYY" />
+      </title-page>
+    </stellar:export-pdf>
+  </target>
+
+  <target name="test-policy-processed-default">
+    <stellar:export-pdf src="src/psml/policy-processed.psml"
+                        dest="out/ant_policy-processed_default.pdf" />
+  </target>
+
+  <target name="test-policy-processed-styled">
+    <stellar:export-pdf src="src/psml/policy-processed.psml"
+                        dest="out/ant_policy-processed_styled.pdf"
                         stylesheet="src/css/policy.css"
                         fontsDir="src/fonts">
       <title-page>

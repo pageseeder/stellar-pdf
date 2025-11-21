@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<document id="2147" schemaversion="1.4" date="2025-11-20T10:10:53+11:00" version="current" level="portable">
+<document id="2147" schemaversion="1.4" type="policy" date="2025-11-20T10:10:53+11:00" version="current" level="portable">
   <documentinfo>
     <uri id="2147" external="false" mediatype="application/vnd.pageseeder.psml+xml" created="2025-09-18T14:51:34+10:00"
          modified="2025-11-20T10:10:53+11:00" scheme="http" host="localhost" port="80"
          path="/ps/dev/samples/documents/policy.psml"
+         documenttype="policy"
          decodedpath="/ps/dev/samples/documents/policy.psml" title="Privacy policy">
       <displaytitle>Privacy policy</displaytitle>
     </uri>

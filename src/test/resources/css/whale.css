@@ -9,20 +9,11 @@
         content: element(title);
         font-family: 'Inter 18pt', 'Arial', sans-serif;
         font-size: 9pt;
-        color: #ea007e;
-    }
-
-    @bottom-left {
-        border-top: .25mm solid #ea007e;
-        background-size: 24mm auto;
-        width: 24mm;
-        color: #ea007e;
-        padding-left: 21mm;
-        content: '';
+        color: #0376BB;
     }
 
     @bottom-right {
-        border-top: .25mm solid #ea007e;
+        border-top: .25mm solid #0376BB;
         margin: 5mm 0 10mm 0;
         content: "Page " counter(page) " of " counter(pages);
         font-family: 'Inter 18pt', 'Arial', sans-serif;
@@ -40,7 +31,7 @@ document {
 documentinfo > uri > displaytitle {
     position: running(title);
     text-align: left;
-    color: #ea007e;
+    color: #0376BB;
 }
 
 documentinfo > uri > description,
@@ -48,18 +39,10 @@ documentinfo > uri > labels {
    display: none;
 }
 
-blockxref documentinfo {
-    display: none;
-}
-
-section, fragment {
-    display: block;
-}
-
 /* Title page -------------------- */
 
 @page:first {
-    background-image: url(images/title-cover.png);
+    background-image: url(images/whale-cover.png);
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 210mm 297mm;
@@ -70,48 +53,21 @@ section, fragment {
     @bottom-right {  content: none; }
 }
 
-section[id$='-title'] {
+section[id='title'] {
    height: 245mm;
    position: relative;
 }
 
-section[id$='-title']::after {
-    content: '';
-    position: absolute;
-    bottom: -5mm;
-    right: 0;
-    display: block;
-    height: 30mm;
-    width: 66mm;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom right;
-}
-
-blockxref section[id$='-title']::after {
-    content: none;
-}
-
 heading[level='1'] {
-    color: #3e0021;
+    color: #00464c;
     padding: 7cm 0 0;
     font-weight: 300;
 }
 
 block[label='pdf-date'] {
-    color: #ea007e;
+    color: #0376BB;
     font-size: 15pt;
     font-weight: 300;
-}
-
-/* TOC -------------------- */
-
-toc-tree::before {
-    color: #3e0021;
-}
-
-toc-part link::before {
-    color: #ea007e;
 }
 
 /* Content ---------------- */
@@ -119,10 +75,4 @@ toc-part link::before {
 section[id$='-content'] {
     display: block;
     margin-left: 15mm;
-}
-
-/* Labels ------------- */
-
-block[label='TODO'] {
-    display: none;
 }

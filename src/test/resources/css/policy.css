@@ -114,11 +114,6 @@ section[id$='-content'] {
     margin-left: 15mm;
 }
 
-blockxref section[id$='-content'] {
-    margin:0;
-    border: 0 none;
-}
-
 /* Headings and paragraphs -------------------- */
 
 heading {
@@ -131,17 +126,6 @@ heading[level='2'] {
 
 heading[level='3'] {
     color: #0376BB;
-}
-
-heading[level='3']::before {
-    content: '\00a0';
-    width: .5em;
-    height: .5em;
-    background-color: #0376BB;
-    display: inline-block;
-    margin-right: .25em;
-    position: relative;
-    top: .5em;
 }
 
 heading[prefix]::before,

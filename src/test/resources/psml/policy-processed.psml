@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document id="3460" schemaversion="1.4" type="policy" date="2025-11-21T17:12:07+11:00" version="current"
+          level="processed">
+  <documentinfo>
+    <uri id="3460" external="false" mediatype="application/vnd.pageseeder.psml+xml" documenttype="policy"
+         created="2025-11-21T17:12:07+11:00" modified="2025-11-21T17:12:07+11:00" scheme="http" host="localhost"
+         port="80" path="/ps/infosec/doc/documents/policy.psml" decodedpath="/ps/infosec/doc/documents/policy.psml"
+         title="Privacy policy">
+      <displaytitle>Privacy policy</displaytitle>
+    </uri>
+  </documentinfo>
+  <fragmentinfo structure-modified="2025-09-19T11:59:58+10:00">
+    <locator fragment="3460-11" modified="2025-09-18T14:54:04+10:00"></locator>
+    <locator fragment="3460-12" modified="2025-09-18T14:54:04+10:00"></locator>
+    <locator fragment="3460-13" modified="2025-11-20T10:10:53+11:00"></locator>
+    <locator fragment="3460-2" modified="2025-09-18T14:52:09+10:00"></locator>
+    <locator fragment="3460-3" modified="2025-09-18T14:54:04+10:00"></locator>
+    <locator fragment="3460-4" modified="2025-09-18T14:54:05+10:00"></locator>
+    <locator fragment="3460-5" modified="2025-09-18T14:54:05+10:00"></locator>
+    <locator fragment="3460-6" modified="2025-09-18T14:54:05+10:00"></locator>
+    <locator fragment="3460-7" modified="2025-09-18T14:54:04+10:00"></locator>
+    <locator fragment="3460-8" modified="2025-09-18T14:54:04+10:00"></locator>
+    <locator fragment="3460-9" modified="2025-09-18T14:54:04+10:00"></locator>
+    <locator fragment="3460-10" modified="2025-09-18T14:54:04+10:00"></locator>
+  </fragmentinfo>
+  <section id="3460-title">
+    <fragment id="3460-1">
+      <heading level="1" id="3460-1-1-1">Privacy policy</heading>
+    </fragment>
+  </section>
+  <section id="3460-header">
+    <properties-fragment id="3460-header">
+      <property name="audience" title="Audience" value="Public"></property>
+      <property name="revised_date" title="Last revised" datatype="date" value="2025-10-14"></property>
+    </properties-fragment>
+  </section>
+  <toc>
+    <toc-tree title="Privacy policy">
+      <toc-part level="1" title="Introduction" prefix="1" canonical="1." idref="3460-1-2-1"/>
+      <toc-part level="1" title="Information We Collect" prefix="2" canonical="2." idref="3460-1-3-1">
+        <toc-part level="2" title="Personal Information" prefix="2.1" canonical="2.1." idref="3460-1-4-1"/>
+        <toc-part level="2" title="Non-Personal Information" prefix="2.2" canonical="2.2." idref="3460-1-5-1"/>
+      </toc-part>
+      <toc-part level="1" title="How We Use Your Information" prefix="3" canonical="3." idref="3460-1-6-1"/>
+      <toc-part level="1" title="Information Sharing" prefix="4" canonical="4." idref="3460-1-7-1"/>
+      <toc-part level="1" title="Your Rights and Choices" prefix="5" canonical="5." idref="3460-1-8-1"/>
+      <toc-part level="1" title="Data Security" prefix="6" canonical="6." idref="3460-1-9-1"/>
+      <toc-part level="1" title="Data Retention" prefix="7" canonical="7." idref="3460-1-10-1"/>
+      <toc-part level="1" title="Children&#39;s Privacy" prefix="8" canonical="8." idref="3460-1-11-1"/>
+      <toc-part level="1" title="Changes to This Privacy Policy" prefix="9" canonical="9." idref="3460-1-12-1"/>
+      <toc-part level="1" title="Contact Us" prefix="10" canonical="10." idref="3460-1-13-1"/>
+    </toc-tree>
+  </toc>
+  <section id="3460-content">
+    <fragment id="3460-2">
+      <heading prefix="1" level="2" numbered="true" id="3460-1-2-1">Introduction</heading>
+      <para>Example Inc ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how
+        we collect, use, disclose, and safeguard your information when you visit our website
+        <link unresolved="true" href="http://www.example.com">www.example.com</link> and use our services.
+      </para>
+    </fragment>
+    <fragment id="3460-3">
+      <heading prefix="2" level="2" numbered="true" id="3460-1-3-1">Information We Collect</heading>
+    </fragment>
+    <fragment id="3460-4">
+      <heading prefix="2.1" level="3" numbered="true" id="3460-1-4-1">Personal Information</heading>
+      <list>
+        <item>Contact information (name, email address, phone number, mailing address)</item>
+        <item>Account credentials</item>
+        <item>Payment information</item>
+        <item>Communication preferences</item>
+      </list>
+    </fragment>
+    <fragment id="3460-5">
+      <heading prefix="2.2" level="3" numbered="true" id="3460-1-5-1">Non-Personal Information</heading>
+      <list>
+        <item>Browser type and settings</item>
+        <item>Device information</item>
+        <item>IP address</item>
+        <item>Usage data</item>
+        <item>Cookies and similar technologies</item>
+      </list>
+    </fragment>
+    <fragment id="3460-6">
+      <heading prefix="3" level="2" numbered="true" id="3460-1-6-1">How We Use Your Information</heading>
+      <para>We may use the information we collect to:</para>
+      <list>
+        <item>Provide, maintain, and improve our services</item>
+        <item>Process transactions</item>
+        <item>Send administrative information</item>
+        <item>Send marketing communications</item>
+        <item>Respond to inquiries and provide customer support</item>
+        <item>Monitor and analyze usage patterns and trends</item>
+      </list>
+    </fragment>
+    <fragment id="3460-7">
+      <heading prefix="4" level="2" numbered="true" id="3460-1-7-1">Information Sharing</heading>
+      <para>We may share your information with:</para>
+      <list>
+        <item>Service providers who perform services on our behalf</item>
+        <item>Business partners with your consent</item>
+        <item>Legal authorities when required by law</item>
+        <item>In connection with a business transfer or merger</item>
+      </list>
+    </fragment>
+    <fragment id="3460-8">
+      <heading prefix="5" level="2" numbered="true" id="3460-1-8-1">Your Rights and Choices</heading>
+      <para>Depending on your location, you may have rights to:</para>
+      <list>
+        <item>Access personal information we hold about you</item>
+        <item>Correct inaccurate information</item>
+        <item>Delete your information</item>
+        <item>Object to certain processing activities</item>
+        <item>Withdraw consent</item>
+        <item>Opt-out of marketing communications</item>
+      </list>
+    </fragment>
+    <fragment id="3460-9">
+      <heading prefix="6" level="2" numbered="true" id="3460-1-9-1">Data Security</heading>
+      <para>We implement appropriate technical and organizational measures to protect your personal information.</para>
+    </fragment>
+    <fragment id="3460-10">
+      <heading prefix="7" level="2" numbered="true" id="3460-1-10-1">Data Retention</heading>
+      <para>We retain your personal information for as long as necessary to fulfill the purposes outlined in this
+        Privacy Policy, unless a longer retention period is required by law.
+      </para>
+    </fragment>
+    <fragment id="3460-11">
+      <heading prefix="8" level="2" numbered="true" id="3460-1-11-1">Children's Privacy</heading>
+      <para>Our services are not directed to children under 13 years of age, and we do not knowingly collect information
+        from children under 13.
+      </para>
+    </fragment>
+    <fragment id="3460-12">
+      <heading prefix="9" level="2" numbered="true" id="3460-1-12-1">Changes to This Privacy Policy</heading>
+      <para>We may update this Privacy Policy periodically. The updated version will be indicated by an updated "Last
+        revised" date.
+      </para>
+    </fragment>
+    <fragment id="3460-13">
+      <heading prefix="10" level="2" numbered="true" id="3460-1-13-1">Contact Us</heading>
+      <para>If you have questions about this Privacy Policy, please contact us at:</para>
+      <list>
+        <item>Email: <link unresolved="true" href="mailto:privacy@example.com">privacy@example.com</link></item>
+        <item>Phone: <bold>+61 491 570 006</bold></item>
+      </list>
+    </fragment>
+  </section>
+</document>
