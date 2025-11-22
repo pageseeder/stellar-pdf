@@ -1,6 +1,7 @@
 package org.pageseeder.stellar.core;
 
 import com.lowagie.text.pdf.PdfDate;
+import org.eclipse.jdt.annotation.Nullable;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -26,7 +27,7 @@ import java.time.format.DateTimeFormatter;
  * @author Christophe Lauret
  *
  * @since 0.5.0
- * @version 0.5.2
+ * @version 0.7.0
  */
 public final class Utils {
 
@@ -63,7 +64,7 @@ public final class Utils {
    * @return PDF date string, e.g., "D:20230802134500+10'00'"
    * @throws IllegalArgumentException if input is invalid or null
    */
-  public static String toPdfDateFormat(String isoDate) {
+  public static String toPdfDateFormat(@Nullable String isoDate) {
     if (isoDate == null || isoDate.isEmpty()) {
       throw new IllegalArgumentException("Input date must not be null or empty");
     }
@@ -108,7 +109,7 @@ public final class Utils {
    *
    * @return the child element or <code>null</code> if not found
    */
-  public static Element findFirstChild(Element parent, String targetName) {
+  public static @Nullable Element findFirstChild(Element parent, String targetName) {
     NodeList children = parent.getChildNodes();
     for (int i = 0; i < children.getLength(); i++) {
       Node n = children.item(i);
