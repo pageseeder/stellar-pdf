@@ -20,6 +20,37 @@
                         fontsDir="src/fonts" />
   </target>
 
+  <target name="test-basic-default">
+    <stellar:export-pdf src="src/psml/basic.psml"
+                        dest="out/ant_basic_default.pdf" />
+  </target>
+
+  <target name="test-basic-styled">
+    <stellar:export-pdf src="src/psml/basic.psml"
+                        dest="out/ant_basic_styled.pdf"
+                        stylesheet="src/css/basic.css"
+                        fontsDir="src/fonts">
+      <title-page />
+    </stellar:export-pdf>
+  </target>
+
+  <target name="test-turtles-default">
+    <stellar:export-pdf src="src/psml/turtles.psml"
+                        dest="out/ant_turtles_default.pdf" />
+  </target>
+
+  <target name="test-turtles-styled">
+    <stellar:export-pdf src="src/psml/turtles.psml"
+                        dest="out/ant_turtles_styled.pdf"
+                        stylesheet="src/css/turtles.css"
+                        fontsDir="src/fonts">
+      <title-page>
+        <item name="subtitle" xpath="//property[@name='subtitle']/@value"/>
+        <item name="authors" xpath="concat(//property[@name='authors']/value[1], ' &amp; ' ,//property[@name='authors']/value[2])" />
+      </title-page>
+    </stellar:export-pdf>
+  </target>
+
   <!--
    Process the policy document with the default settings
   -->
@@ -58,33 +89,18 @@
     </stellar:export-pdf>
   </target>
 
-  <target name="test-basic-default">
-    <stellar:export-pdf src="src/psml/basic.psml"
-                        dest="out/ant_basic_default.pdf" />
+  <target name="test-useless-default">
+    <stellar:export-pdf src="src/psml/useless.psml"
+                        dest="out/ant_useless_default.pdf" />
   </target>
 
-  <target name="test-basic-styled">
-    <stellar:export-pdf src="src/psml/basic.psml"
-                        dest="out/ant_basic_styled.pdf"
-                        stylesheet="src/css/basic.css"
-                        fontsDir="src/fonts">
-      <title-page />
-    </stellar:export-pdf>
-  </target>
-
-  <target name="test-turtles-default">
-    <stellar:export-pdf src="src/psml/turtles.psml"
-                        dest="out/ant_turtles_default.pdf" />
-  </target>
-
-  <target name="test-turtles-styled">
-    <stellar:export-pdf src="src/psml/turtles.psml"
-                        dest="out/ant_turtles_styled.pdf"
-                        stylesheet="src/css/turtles.css"
+  <target name="test-useless-styled">
+    <stellar:export-pdf src="src/psml/useless.psml"
+                        dest="out/ant_useless_styled.pdf"
+                        stylesheet="src/css/useless.css"
                         fontsDir="src/fonts">
       <title-page>
-        <item name="subtitle" xpath="//property[@name='subtitle']/@value"/>
-        <item name="authors" xpath="concat(//property[@name='authors']/value[1], ' &amp; ' ,//property[@name='authors']/value[2])" />
+        <item name="date" xpath="current-date()" format="d MMMM yyyy"/>
       </title-page>
     </stellar:export-pdf>
   </target>

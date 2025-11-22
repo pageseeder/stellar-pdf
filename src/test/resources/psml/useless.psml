@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document id="3462" schemaversion="1.4" type="references" date="2025-11-22T10:26:03+11:00" version="current"
+          level="processed">
+  <documentinfo>
+    <uri id="3462" external="false" mediatype="application/vnd.pageseeder.psml+xml" documenttype="references"
+         created="2025-11-22T09:50:52+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+         port="80" path="/ps/dev/samples/publications/useless.psml"
+         decodedpath="/ps/dev/samples/publications/useless.psml" title="Useless Machine Design Pack">
+      <displaytitle>Useless Machine Design Pack</displaytitle>
+    </uri>
+    <publication id="dvss-usel-pack-9t10" hostid="1" rooturiid="3462" title="Useless Machine Design Pack"
+                 defaultgroupid="10" type="default"></publication>
+  </documentinfo>
+  <fragmentinfo>
+    <locator id="6129" fragment="3462-2" editid="80069" modified="2025-11-22T10:06:31+11:00"></locator>
+  </fragmentinfo>
+  <metadata></metadata>
+  <section id="3462-title">
+    <fragment id="3462-1">
+      <heading level="1" id="3462-1-1-1">Useless Machine Design Pack</heading>
+    </fragment>
+  </section>
+  <toc>
+    <toc-tree title="Useless Machine Design Pack">
+      <toc-part level="1" title="Project Overview" prefix="1" canonical="1." idref="3463-1-1-1">
+        <toc-part level="2" title="Project title" prefix="1.1" canonical="1.1." idref="3463-1-2-1"/>
+        <toc-part level="2" title="Purpose" prefix="1.2" canonical="1.2." idref="3463-1-3-1"/>
+        <toc-part level="2" title="Goals" prefix="1.3" canonical="1.3." idref="3463-1-4-1"/>
+        <toc-part level="2" title="System summary" prefix="1.4" canonical="1.4." idref="3463-1-5-1"/>
+        <toc-part level="2" title="Key components" prefix="1.5" canonical="1.5." idref="3463-1-6-1"/>
+      </toc-part>
+      <toc-part level="1" title="Technical Requirements" prefix="2" canonical="2." idref="3473-1-1-1">
+        <toc-part level="2" title="Functional requirements" prefix="2.1" canonical="2.1." idref="3473-1-2-1"/>
+        <toc-part level="2" title="Non-functional requirements" prefix="2.2" canonical="2.2." idref="3473-1-3-1"/>
+        <toc-part level="2" title="Constraints" prefix="2.3" canonical="2.3." idref="3473-1-4-1"/>
+      </toc-part>
+      <toc-part level="1" title="Bill of Materials (BOM)" prefix="3" canonical="3." idref="3464-1-1-1"/>
+      <toc-part level="1" title="Mechanical Design" prefix="4" canonical="4." idref="3465-1-1-1">
+        <toc-part level="2" title="Enclosure Layout" prefix="4.1" canonical="4.1." idref="3465-1-2-1"/>
+        <toc-part level="2" title="Arm design" prefix="4.2" canonical="4.2." idref="3465-1-3-1"/>
+        <toc-part level="2" title="Mounting" prefix="4.3" canonical="4.3." idref="3465-1-4-1"/>
+        <toc-part level="2" title="Diagrams (ASCII Placeholder)" prefix="4.4" canonical="4.4." idref="3465-1-5-1"/>
+      </toc-part>
+      <toc-part level="1" title="Electrical Wiring" prefix="5" canonical="5." idref="3466-1-1-1">
+        <toc-part level="2" title="Power system" prefix="5.1" canonical="5.1." idref="3466-1-2-1"/>
+        <toc-part level="2" title="Connections" prefix="5.2" canonical="5.2." idref="3466-1-3-1"/>
+        <toc-part level="2" title="Wiring table" prefix="5.3" canonical="5.3." idref="3466-1-4-1"/>
+      </toc-part>
+      <toc-part level="1" title="Firmware Specification" prefix="6" canonical="6." idref="3467-1-1-1">
+        <toc-part level="2" title="Logic flow" prefix="6.1" canonical="6.1." idref="3467-1-2-1"/>
+        <toc-part level="2" title="Pseudo-code" prefix="6.2" canonical="6.2." idref="3467-1-3-1"/>
+      </toc-part>
+      <toc-part level="1" title="Assembly Instructions" prefix="7" canonical="7." idref="3468-1-1-1">
+        <toc-part level="2" title="Step-by-Step" prefix="7.1" canonical="7.1." idref="3468-1-2-1"/>
+      </toc-part>
+      <toc-part level="1" title="Testing &amp; QA" prefix="8" canonical="8." idref="3469-1-1-1">
+        <toc-part level="2" title="Test cases" prefix="8.1" canonical="8.1." idref="3469-1-2-1"/>
+        <toc-part level="2" title="Common issues" prefix="8.2" canonical="8.2." idref="3469-1-3-1"/>
+      </toc-part>
+      <toc-part level="1" title="User Guide" prefix="9" canonical="9." idref="3470-1-1-1">
+        <toc-part level="2" title="How to use" prefix="9.1" canonical="9.1." idref="3470-1-2-1"/>
+        <toc-part level="2" title="Safety notes" prefix="9.2" canonical="9.2." idref="3470-1-3-1"/>
+      </toc-part>
+      <toc-part level="1" title="Maintenance" prefix="10" canonical="10." idref="3471-1-1-1">
+        <toc-part level="2" title="Routine maintenance" prefix="10.1" canonical="10.1." idref="3471-1-2-1"/>
+        <toc-part level="2" title="Recommended lifespan" prefix="10.2" canonical="10.2." idref="3471-1-3-1"/>
+      </toc-part>
+    </toc-tree>
+  </toc>
+  <section id="3462-xrefs">
+    <xref-fragment id="3462-2">
+      <blockxref id="80023" frag="default" reversefrag="2" reversetitle="References" reverselink="true"
+                 reversetype="none" display="document" type="embed" uriid="3463" href="useless/project_overview.psml"
+                 urititle="Project Overview" mediatype="application/vnd.pageseeder.psml+xml">
+        <document id="3463" schemaversion="1.4" date="2025-11-22T10:26:03+11:00" version="current" level="processed">
+          <documentinfo>
+            <uri id="3463" external="false" mediatype="application/vnd.pageseeder.psml+xml"
+                 created="2025-11-22T09:51:09+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+                 port="80" path="/ps/dev/samples/publications/useless/project_overview.psml"
+                 decodedpath="/ps/dev/samples/publications/useless/project_overview.psml" title="Project Overview">
+              <displaytitle>Project Overview</displaytitle>
+            </uri>
+            <reversexrefs>
+              <reversexref uriid="3462" href="useless.psml" frag="2" urititle="Useless Machine Design Pack"
+                           mediatype="application/vnd.pageseeder.psml+xml" documenttype="references" id="80023"
+                           title="References" type="none" forwardtype="embed" forwarddisplay="document"
+                           forwardfrag="default"></reversexref>
+            </reversexrefs>
+          </documentinfo>
+          <fragmentinfo structure-modified="2025-11-22T09:54:25+11:00">
+            <locator id="6130" fragment="3463-1" editid="79995" modified="2025-11-22T09:54:07+11:00"></locator>
+            <locator id="6131" fragment="3463-2" editid="80033" modified="2025-11-22T10:00:01+11:00"></locator>
+            <locator id="6132" fragment="3463-3" editid="80034" modified="2025-11-22T10:00:02+11:00"></locator>
+            <locator id="6133" fragment="3463-4" editid="80035" modified="2025-11-22T10:00:02+11:00"></locator>
+            <locator id="6134" fragment="3463-5" editid="80138" modified="2025-11-22T10:17:29+11:00"></locator>
+            <locator id="6135" fragment="3463-6" editid="80032" modified="2025-11-22T10:00:01+11:00"></locator>
+          </fragmentinfo>
+          <metadata></metadata>
+          <section id="3463-title">
+            <fragment id="3463-1">
+              <heading prefix="1" level="1" numbered="true" id="3463-1-1-1">Project Overview</heading>
+            </fragment>
+          </section>
+          <section id="3463-content">
+            <fragment id="3463-2">
+              <heading prefix="1.1" level="2" numbered="true" id="3463-1-2-1">Project title</heading>
+              <para>Useless Machine (Self-Disabling Device)</para>
+            </fragment>
+            <fragment id="3463-3">
+              <heading prefix="1.2" level="2" numbered="true" id="3463-1-3-1">Purpose</heading>
+              <para>Design and build a novelty device whose sole function is to turn itself off when a user activates
+                it.
+              </para>
+            </fragment>
+            <fragment id="3463-4">
+              <heading prefix="1.3" level="2" numbered="true" id="3463-1-4-1">Goals</heading>
+              <list>
+                <item>Provide a simple, fun electronics/mechanical project.</item>
+                <item>Demonstrate basic concepts of switches, servos, and linkages.</item>
+                <item>Create a compact device with amusing or characterful motion.</item>
+              </list>
+            </fragment>
+            <fragment id="3463-5">
+              <heading prefix="1.4" level="2" numbered="true" id="3463-1-5-1">System summary</heading>
+              <para>A toggle switch triggers a microcontroller or direct servo driver, causing an arm to emerge from a
+                box and flip the switch back off, retracting afterward.
+              </para>
+            </fragment>
+            <fragment id="3463-6">
+              <heading prefix="1.5" level="2" numbered="true" id="3463-1-6-1">Key components</heading>
+              <list>
+                <item>Enclosure box</item>
+                <item>SPDT toggle switch</item>
+                <item>Servo motor (e.g., SG90)</item>
+                <item>Microcontroller (optional) or simple driver circuit</item>
+                <item>Battery pack</item>
+                <item>Linkage/arm assembly</item>
+              </list>
+            </fragment>
+          </section>
+        </document>
+      </blockxref>
+      <blockxref id="80024" frag="default" reversefrag="2" reversetitle="References" reverselink="true"
+                 reversetype="none" display="document" type="embed" uriid="3473"
+                 href="useless/technical_requirements.psml" urititle="Technical Requirements"
+                 mediatype="application/vnd.pageseeder.psml+xml">
+        <document id="3473" schemaversion="1.4" date="2025-11-22T10:26:03+11:00" version="current" level="processed">
+          <documentinfo>
+            <uri id="3473" external="false" mediatype="application/vnd.pageseeder.psml+xml"
+                 created="2025-11-22T09:56:45+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+                 port="80" path="/ps/dev/samples/publications/useless/technical_requirements.psml"
+                 decodedpath="/ps/dev/samples/publications/useless/technical_requirements.psml"
+                 title="Technical Requirements">
+              <displaytitle>Technical Requirements</displaytitle>
+            </uri>
+            <reversexrefs>
+              <reversexref uriid="3462" href="useless.psml" frag="2" urititle="Useless Machine Design Pack"
+                           mediatype="application/vnd.pageseeder.psml+xml" documenttype="references" id="80024"
+                           title="References" type="none" forwardtype="embed" forwarddisplay="document"
+                           forwardfrag="default"></reversexref>
+            </reversexrefs>
+          </documentinfo>
+          <fragmentinfo structure-modified="2025-11-22T09:58:21+11:00">
+            <locator id="6137" fragment="3473-1" editid="80013" modified="2025-11-22T09:56:57+11:00"></locator>
+            <locator id="6138" fragment="3473-2" editid="80016" modified="2025-11-22T09:57:53+11:00"></locator>
+            <locator id="6139" fragment="3473-3" editid="80022" modified="2025-11-22T09:58:45+11:00"></locator>
+            <locator id="6140" fragment="3473-4" editid="80021" modified="2025-11-22T09:58:45+11:00"></locator>
+          </fragmentinfo>
+          <metadata></metadata>
+          <section id="3473-title">
+            <fragment id="3473-1">
+              <heading prefix="2" level="1" numbered="true" id="3473-1-1-1">Technical Requirements</heading>
+            </fragment>
+          </section>
+          <section id="3473-content">
+            <fragment id="3473-2">
+              <heading prefix="2.1" level="2" numbered="true" id="3473-1-2-1">Functional requirements</heading>
+              <nlist start="1">
+                <item>When the user flips the switch ON, the machine must:
+                  <list>
+                    <item>Detect the switch state.</item>
+                    <item>Extend an arm.</item>
+                    <item>Push the switch to OFF.</item>
+                    <item>Fully retract.</item>
+                  </list>
+                </item>
+                <item>The machine must operate reliably for at least 500 cycles.</item>
+                <item>The device must be powered by standard AA batteries or a USB power supply.</item>
+              </nlist>
+            </fragment>
+            <fragment id="3473-3">
+              <heading prefix="2.2" level="2" numbered="true" id="3473-1-3-1">Non-functional requirements</heading>
+              <list>
+                <item>
+                  <bold>Safety:</bold>
+                  No exposed wiring; servo torque must be low enough to avoid injury.
+                </item>
+                <item>
+                  <bold>Durability:</bold>
+                  Mechanism must withstand repeated mechanical stress.
+                </item>
+                <item>
+                  <bold>Noise:</bold>
+                  Servo movement should be under 70 dB.
+                </item>
+                <item>
+                  <bold>Portability:</bold>
+                  Total device weight under 500g.
+                </item>
+              </list>
+            </fragment>
+            <fragment id="3473-4">
+              <heading prefix="2.3" level="2" numbered="true" id="3473-1-4-1">Constraints</heading>
+              <list>
+                <item>Enclosure internal size must accommodate a 9g servo.</item>
+                <item>Arm must clear the switch by at least 5 mm during motion.</item>
+              </list>
+            </fragment>
+          </section>
+        </document>
+      </blockxref>
+      <blockxref id="80061" frag="default" reversefrag="2" reversetitle="References" reverselink="true"
+                 reversetype="none" display="document" type="embed" uriid="3464"
+                 href="useless/bill_of_materials_(bom).psml" urititle="Bill of Materials (BOM)"
+                 mediatype="application/vnd.pageseeder.psml+xml">
+        <document id="3464" schemaversion="1.4" date="2025-11-22T10:26:03+11:00" version="current" level="processed">
+          <documentinfo>
+            <uri id="3464" external="false" mediatype="application/vnd.pageseeder.psml+xml"
+                 created="2025-11-22T09:51:24+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+                 port="80" path="/ps/dev/samples/publications/useless/bill_of_materials_%28bom%29.psml"
+                 decodedpath="/ps/dev/samples/publications/useless/bill_of_materials_(bom).psml"
+                 title="Bill of Materials (BOM)">
+              <displaytitle>Bill of Materials (BOM)</displaytitle>
+            </uri>
+            <reversexrefs>
+              <reversexref uriid="3462" href="useless.psml" frag="2" urititle="Useless Machine Design Pack"
+                           mediatype="application/vnd.pageseeder.psml+xml" documenttype="references" id="80061"
+                           title="References" type="none" forwardtype="embed" forwarddisplay="document"
+                           forwardfrag="default"></reversexref>
+            </reversexrefs>
+          </documentinfo>
+          <fragmentinfo>
+            <locator id="6141" fragment="3464-2" editid="80039" modified="2025-11-22T10:01:12+11:00"></locator>
+            <locator id="6142" fragment="3464-1" editid="80041" modified="2025-11-22T10:01:20+11:00"></locator>
+          </fragmentinfo>
+          <metadata></metadata>
+          <section id="3464-title">
+            <fragment id="3464-1">
+              <heading prefix="3" level="1" numbered="true" id="3464-1-1-1">Bill of Materials (BOM)</heading>
+            </fragment>
+          </section>
+          <section id="3464-content">
+            <fragment id="3464-2">
+              <table>
+                <row part="header">
+                  <cell>Item</cell>
+                  <cell>Quantity</cell>
+                  <cell>Description</cell>
+                </row>
+                <row>
+                  <cell>Wooden or acrylic box</cell>
+                  <cell>1</cell>
+                  <cell>Enclosure for electronics</cell>
+                </row>
+                <row>
+                  <cell>SG90 micro servo</cell>
+                  <cell>1</cell>
+                  <cell>Provides arm movement</cell>
+                </row>
+                <row>
+                  <cell>Toggle switch (SPDT)</cell>
+                  <cell>1</cell>
+                  <cell>User input switch</cell>
+                </row>
+                <row>
+                  <cell>Microcontroller (e.g., Arduino Nano)</cell>
+                  <cell>1</cell>
+                  <cell>Logic to control servo</cell>
+                </row>
+                <row>
+                  <cell>AA battery holder or USB power module</cell>
+                  <cell>1</cell>
+                  <cell>Power supply</cell>
+                </row>
+                <row>
+                  <cell>Servo horn + linkage</cell>
+                  <cell>1</cell>
+                  <cell>Attached to servo for arm</cell>
+                </row>
+                <row>
+                  <cell>Fasteners</cell>
+                  <cell>Various</cell>
+                  <cell>Screws, nuts, etc.</cell>
+                </row>
+                <row>
+                  <cell>Arm material (wood, plastic)</cell>
+                  <cell>1</cell>
+                  <cell>Mechanism to flip switch</cell>
+                </row>
+                <row>
+                  <cell>Wires</cell>
+                  <cell>Various</cell>
+                  <cell>Electrical connections</cell>
+                </row>
+              </table>
+            </fragment>
+          </section>
+        </document>
+      </blockxref>
+      <blockxref id="80062" frag="default" reversefrag="2" reversetitle="References" reverselink="true"
+                 reversetype="none" display="document" type="embed" uriid="3465"
+                 href="useless/mechanical_design_document.psml" urititle="Mechanical Design"
+                 mediatype="application/vnd.pageseeder.psml+xml">
+        <document id="3465" schemaversion="1.4" date="2025-11-22T10:26:03+11:00" version="current" level="processed">
+          <documentinfo>
+            <uri id="3465" external="false" mediatype="application/vnd.pageseeder.psml+xml"
+                 created="2025-11-22T09:51:32+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+                 port="80" path="/ps/dev/samples/publications/useless/mechanical_design_document.psml"
+                 decodedpath="/ps/dev/samples/publications/useless/mechanical_design_document.psml"
+                 title="Mechanical Design">
+              <displaytitle>Mechanical Design</displaytitle>
+            </uri>
+            <reversexrefs>
+              <reversexref uriid="3462" href="useless.psml" frag="2" urititle="Useless Machine Design Pack"
+                           mediatype="application/vnd.pageseeder.psml+xml" documenttype="references" id="80062"
+                           title="References" type="none" forwardtype="embed" forwarddisplay="document"
+                           forwardfrag="default"></reversexref>
+            </reversexrefs>
+          </documentinfo>
+          <fragmentinfo structure-modified="2025-11-22T10:05:16+11:00">
+            <locator id="6145" fragment="3465-2" editid="80060" modified="2025-11-22T10:05:23+11:00"></locator>
+            <locator id="6146" fragment="3465-4" editid="80058" modified="2025-11-22T10:05:23+11:00"></locator>
+            <locator id="6147" fragment="3465-5" editid="80057" modified="2025-11-22T10:05:23+11:00"></locator>
+            <locator id="6148" fragment="3465-6" editid="80056" modified="2025-11-22T10:05:16+11:00"></locator>
+            <locator id="6143" fragment="3465-1" editid="80044" modified="2025-11-22T10:01:56+11:00"></locator>
+            <locator id="6144" fragment="3465-3" editid="80059" modified="2025-11-22T10:05:23+11:00"></locator>
+          </fragmentinfo>
+          <metadata></metadata>
+          <section id="3465-title">
+            <fragment id="3465-1">
+              <heading prefix="4" level="1" numbered="true" id="3465-1-1-1">Mechanical Design</heading>
+            </fragment>
+          </section>
+          <section id="3465-content">
+            <fragment id="3465-2">
+              <heading prefix="4.1" level="2" numbered="true" id="3465-1-2-1">Enclosure Layout</heading>
+              <list>
+                <item>Top panel includes:
+                  <list>
+                    <item>Cutout for toggle switch.</item>
+                    <item>Hinged or removable lid for assembly access.</item>
+                  </list>
+                </item>
+                <item>Inside panel includes:
+                  <list>
+                    <item>Mounting platform for servo.</item>
+                    <item>Cable routing channel.</item>
+                  </list>
+                </item>
+              </list>
+            </fragment>
+            <fragment id="3465-3">
+              <heading prefix="4.2" level="2" numbered="true" id="3465-1-3-1">Arm design</heading>
+              <list>
+                <item>Length: 4–6 cm depending on box size.</item>
+                <item>Material: Lightweight wood, acrylic, or 3D-printed plastic.</item>
+                <item>Motion: Single rotation from hidden position to switch actuation position.</item>
+              </list>
+            </fragment>
+            <fragment id="3465-4">
+              <heading prefix="4.3" level="2" numbered="true" id="3465-1-4-1">Mounting</heading>
+              <list>
+                <item>Servo mounted at approx. 30–45° to switch depending on linkage geometry.</item>
+                <item>Arm should extend 1–2 cm past the switch handle to ensure proper force.</item>
+              </list>
+            </fragment>
+            <fragment id="3465-5">
+              <heading prefix="4.4" level="2" numbered="true" id="3465-1-5-1">Diagrams (ASCII Placeholder)</heading>
+              <preformat>+-----------------------+
+|        ______         |
+|  [S]  | Servo |  -->  +---- Arm Path
+|        ------         |
++-----------------------+
+              </preformat>
+            </fragment>
+          </section>
+        </document>
+      </blockxref>
+      <blockxref id="80063" frag="default" reversefrag="2" reversetitle="References" reverselink="true"
+                 reversetype="none" display="document" type="embed" uriid="3466"
+                 href="useless/electrical_wiring_document.psml" urititle="Electrical Wiring"
+                 mediatype="application/vnd.pageseeder.psml+xml">
+        <document id="3466" schemaversion="1.4" date="2025-11-22T10:26:03+11:00" version="current" level="processed">
+          <documentinfo>
+            <uri id="3466" external="false" mediatype="application/vnd.pageseeder.psml+xml"
+                 created="2025-11-22T09:51:42+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+                 port="80" path="/ps/dev/samples/publications/useless/electrical_wiring_document.psml"
+                 decodedpath="/ps/dev/samples/publications/useless/electrical_wiring_document.psml"
+                 title="Electrical Wiring">
+              <displaytitle>Electrical Wiring</displaytitle>
+            </uri>
+            <reversexrefs>
+              <reversexref uriid="3462" href="useless.psml" frag="2" urititle="Useless Machine Design Pack"
+                           mediatype="application/vnd.pageseeder.psml+xml" documenttype="references" id="80063"
+                           title="References" type="none" forwardtype="embed" forwarddisplay="document"
+                           forwardfrag="default"></reversexref>
+            </reversexrefs>
+          </documentinfo>
+          <fragmentinfo structure-modified="2025-11-22T10:07:39+11:00">
+            <locator id="6149" fragment="3466-1" editid="80071" modified="2025-11-22T10:07:17+11:00"></locator>
+            <locator id="6150" fragment="3466-3" editid="80080" modified="2025-11-22T10:08:40+11:00"></locator>
+            <locator id="6151" fragment="3466-2" editid="80079" modified="2025-11-22T10:08:40+11:00"></locator>
+            <locator id="6152" fragment="3466-4" editid="80078" modified="2025-11-22T10:08:40+11:00"></locator>
+          </fragmentinfo>
+          <metadata></metadata>
+          <section id="3466-title">
+            <fragment id="3466-1">
+              <heading prefix="5" level="1" numbered="true" id="3466-1-1-1">Electrical Wiring</heading>
+            </fragment>
+          </section>
+          <section id="3466-content">
+            <fragment id="3466-2">
+              <heading prefix="5.1" level="2" numbered="true" id="3466-1-2-1">Power system</heading>
+              <list>
+                <item>5V supply from AA battery pack or USB converter.</item>
+              </list>
+            </fragment>
+            <fragment id="3466-3">
+              <heading prefix="5.2" level="2" numbered="true" id="3466-1-3-1">Connections</heading>
+              <list>
+                <item>Toggle switch wired to microcontroller digital input.</item>
+                <item>Servo powered from a 5V rail (do not power directly from MCU pin).</item>
+                <item>Servo signal pin connected to PWM-capable pin.</item>
+                <item>Ground shared across all components.</item>
+              </list>
+            </fragment>
+            <fragment id="3466-4">
+              <heading prefix="5.3" level="2" numbered="true" id="3466-1-4-1">Wiring table</heading>
+              <table>
+                <row part="header">
+                  <cell>Component</cell>
+                  <cell>Pin</cell>
+                  <cell>Destination</cell>
+                </row>
+                <row>
+                  <cell>Toggle Switch</cell>
+                  <cell>Output</cell>
+                  <cell>MCU digital pin 2</cell>
+                </row>
+                <row>
+                  <cell>Servo</cell>
+                  <cell>Signal</cell>
+                  <cell>MCU PWM pin 9</cell>
+                </row>
+                <row>
+                  <cell>Servo</cell>
+                  <cell>VCC</cell>
+                  <cell>5V</cell>
+                </row>
+                <row>
+                  <cell>Servo</cell>
+                  <cell>GND</cell>
+                  <cell>Common ground</cell>
+                </row>
+                <row>
+                  <cell>Battery Pack</cell>
+                  <cell>+/-</cell>
+                  <cell>5V input rail</cell>
+                </row>
+              </table>
+            </fragment>
+          </section>
+        </document>
+      </blockxref>
+      <blockxref id="80064" frag="default" reversefrag="2" reversetitle="References" reverselink="true"
+                 reversetype="none" display="document" type="embed" uriid="3467"
+                 href="useless/firmware_specification_document.psml" urititle="Firmware Specification"
+                 mediatype="application/vnd.pageseeder.psml+xml">
+        <document id="3467" schemaversion="1.4" date="2025-11-22T10:26:03+11:00" version="current" level="processed">
+          <documentinfo>
+            <uri id="3467" external="false" mediatype="application/vnd.pageseeder.psml+xml"
+                 created="2025-11-22T09:51:52+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+                 port="80" path="/ps/dev/samples/publications/useless/firmware_specification_document.psml"
+                 decodedpath="/ps/dev/samples/publications/useless/firmware_specification_document.psml"
+                 title="Firmware Specification">
+              <displaytitle>Firmware Specification</displaytitle>
+            </uri>
+            <reversexrefs>
+              <reversexref uriid="3462" href="useless.psml" frag="2" urititle="Useless Machine Design Pack"
+                           mediatype="application/vnd.pageseeder.psml+xml" documenttype="references" id="80064"
+                           title="References" type="none" forwardtype="embed" forwarddisplay="document"
+                           forwardfrag="default"></reversexref>
+            </reversexrefs>
+          </documentinfo>
+          <fragmentinfo structure-modified="2025-11-22T10:09:45+11:00">
+            <locator id="6153" fragment="3467-1" editid="80090" modified="2025-11-22T10:10:45+11:00"></locator>
+            <locator id="6154" fragment="3467-3" editid="80089" modified="2025-11-22T10:10:45+11:00"></locator>
+            <locator id="6155" fragment="3467-2" editid="80091" modified="2025-11-22T10:10:45+11:00"></locator>
+          </fragmentinfo>
+          <metadata></metadata>
+          <section id="3467-title">
+            <fragment id="3467-1">
+              <heading prefix="6" level="1" numbered="true" id="3467-1-1-1">Firmware Specification</heading>
+            </fragment>
+          </section>
+          <section id="3467-content">
+            <fragment id="3467-2">
+              <heading prefix="6.1" level="2" numbered="true" id="3467-1-2-1">Logic flow</heading>
+              <nlist start="1">
+                <item>Boot system.</item>
+                <item>Read switch state.</item>
+                <item>If switch = OFF → idle.</item>
+                <item>If switch = ON:
+                  <list>
+                    <item>Delay 300–600 ms (optional dramatic pause).</item>
+                    <item>Move servo to extension angle.</item>
+                    <item>Wait 300 ms.</item>
+                    <item>Move servo to retraction angle.</item>
+                    <item>Return to idle.</item>
+                  </list>
+                </item>
+              </nlist>
+            </fragment>
+            <fragment id="3467-3">
+              <heading prefix="6.2" level="2" numbered="true" id="3467-1-3-1">Pseudo-code</heading>
+              <preformat>loop:
+  if switch == ON:
+    delay(400)
+    servo.write(EXTEND)
+    delay(300)
+    servo.write(RETRACT)
+  else:
+    idle()
+              </preformat>
+            </fragment>
+          </section>
+        </document>
+      </blockxref>
+      <blockxref id="80065" frag="default" reversefrag="2" reversetitle="References" reverselink="true"
+                 reversetype="none" display="document" type="embed" uriid="3468"
+                 href="useless/assembly_instructions_document.psml" urititle="Assembly Instructions"
+                 mediatype="application/vnd.pageseeder.psml+xml">
+        <document id="3468" schemaversion="1.4" date="2025-11-22T10:26:03+11:00" version="current" level="processed">
+          <documentinfo>
+            <uri id="3468" external="false" mediatype="application/vnd.pageseeder.psml+xml"
+                 created="2025-11-22T09:52:03+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+                 port="80" path="/ps/dev/samples/publications/useless/assembly_instructions_document.psml"
+                 decodedpath="/ps/dev/samples/publications/useless/assembly_instructions_document.psml"
+                 title="Assembly Instructions">
+              <displaytitle>Assembly Instructions</displaytitle>
+            </uri>
+            <reversexrefs>
+              <reversexref uriid="3462" href="useless.psml" frag="2" urititle="Useless Machine Design Pack"
+                           mediatype="application/vnd.pageseeder.psml+xml" documenttype="references" id="80065"
+                           title="References" type="none" forwardtype="embed" forwarddisplay="document"
+                           forwardfrag="default"></reversexref>
+            </reversexrefs>
+          </documentinfo>
+          <fragmentinfo>
+            <locator id="6156" fragment="3468-1" editid="80098" modified="2025-11-22T10:12:13+11:00"></locator>
+            <locator id="6157" fragment="3468-2" editid="80099" modified="2025-11-22T10:12:24+11:00"></locator>
+          </fragmentinfo>
+          <metadata></metadata>
+          <section id="3468-title">
+            <fragment id="3468-1">
+              <heading prefix="7" level="1" numbered="true" id="3468-1-1-1">Assembly Instructions</heading>
+            </fragment>
+          </section>
+          <section id="3468-content">
+            <fragment id="3468-2">
+              <heading prefix="7.1" level="2" numbered="true" id="3468-1-2-1">Step-by-Step</heading>
+              <para prefix="Step 1" indent="1">
+                <bold>Prepare enclosure:</bold>
+                Drill switch hole; mount lid.
+              </para>
+              <para prefix="Step 2" indent="1">
+                <bold>Install switch:</bold>
+                Secure on top panel.
+              </para>
+              <para prefix="Step 3" indent="1">
+                <bold>Mount servo:</bold>
+                Attach inside using bracket/screws.
+              </para>
+              <para prefix="Step 4" indent="1">
+                <bold>Attach arm:</bold>
+                Fix to servo horn; test movement.
+              </para>
+              <para prefix="Step 5" indent="1">
+                <bold>Wire electronics:</bold>
+                Follow wiring diagram.
+              </para>
+              <para prefix="Step 6" indent="1">
+                <bold>Upload firmware:</bold>
+                Flash microcontroller.
+              </para>
+              <para prefix="Step 7" indent="1">
+                <bold>Power up:</bold>
+                Insert batteries.
+              </para>
+              <para prefix="Step 8" indent="1">
+                <bold>Test:</bold>
+                Flip switch; adjust servo angles if needed.
+              </para>
+            </fragment>
+          </section>
+        </document>
+      </blockxref>
+      <blockxref id="80066" frag="default" reversefrag="2" reversetitle="References" reverselink="true"
+                 reversetype="none" display="document" type="embed" uriid="3469"
+                 href="useless/testing_&amp;_qa_document.psml" urititle="Testing &amp; QA"
+                 mediatype="application/vnd.pageseeder.psml+xml">
+        <document id="3469" schemaversion="1.4" date="2025-11-22T10:26:03+11:00" version="current" level="processed">
+          <documentinfo>
+            <uri id="3469" external="false" mediatype="application/vnd.pageseeder.psml+xml"
+                 created="2025-11-22T09:52:13+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+                 port="80" path="/ps/dev/samples/publications/useless/testing_%26_qa_document.psml"
+                 decodedpath="/ps/dev/samples/publications/useless/testing_&amp;_qa_document.psml"
+                 title="Testing &amp; QA">
+              <displaytitle>Testing &amp; QA</displaytitle>
+            </uri>
+            <reversexrefs>
+              <reversexref uriid="3462" href="useless.psml" frag="2" urititle="Useless Machine Design Pack"
+                           mediatype="application/vnd.pageseeder.psml+xml" documenttype="references" id="80066"
+                           title="References" type="none" forwardtype="embed" forwarddisplay="document"
+                           forwardfrag="default"></reversexref>
+            </reversexrefs>
+          </documentinfo>
+          <fragmentinfo structure-modified="2025-11-22T10:13:55+11:00">
+            <locator id="6161" fragment="3469-4" editid="80113" modified="2025-11-22T10:13:55+11:00"></locator>
+            <locator id="6158" fragment="3469-2" editid="80105" modified="2025-11-22T10:13:22+11:00"></locator>
+            <locator id="6159" fragment="3469-1" editid="80106" modified="2025-11-22T10:13:22+11:00"></locator>
+            <locator id="6160" fragment="3469-3" editid="80109" modified="2025-11-22T10:13:44+11:00"></locator>
+          </fragmentinfo>
+          <metadata></metadata>
+          <section id="3469-title">
+            <fragment id="3469-1">
+              <heading prefix="8" level="1" numbered="true" id="3469-1-1-1">Testing &amp; QA</heading>
+            </fragment>
+          </section>
+          <section id="3469-content">
+            <fragment id="3469-2">
+              <heading prefix="8.1" level="2" numbered="true" id="3469-1-2-1">Test cases</heading>
+              <table>
+                <col part="header"></col>
+                <col></col>
+                <col></col>
+                <row part="header">
+                  <cell>ID</cell>
+                  <cell>Test</cell>
+                  <cell>Expected Result</cell>
+                </row>
+                <row>
+                  <hcell>T1</hcell>
+                  <cell>Flip switch ON</cell>
+                  <cell>Arm pops out and turns switch OFF</cell>
+                </row>
+                <row>
+                  <hcell>T2</hcell>
+                  <cell>Rapid switching</cell>
+                  <cell>Device performs reliably without jitter</cell>
+                </row>
+                <row>
+                  <hcell>T3</hcell>
+                  <cell>Low battery</cell>
+                  <cell>Arm still completes full motion</cell>
+                </row>
+              </table>
+            </fragment>
+            <fragment id="3469-3">
+              <heading prefix="8.2" level="2" numbered="true" id="3469-1-3-1">Common issues</heading>
+              <list>
+                <item>
+                  <bold>Servo jitter</bold>
+                  → add capacitor or separate power rail.
+                </item>
+                <item>
+                  <bold>Arm misses switch</bold>
+                  → adjust linkage or servo angle.
+                </item>
+                <item>
+                  <bold>Weak torque</bold>
+                  → ensure servo receives stable 5V.
+                </item>
+              </list>
+            </fragment>
+          </section>
+        </document>
+      </blockxref>
+      <blockxref id="80067" frag="default" reversefrag="2" reversetitle="References" reverselink="true"
+                 reversetype="none" display="document" type="embed" uriid="3470" href="useless/user_guide_document.psml"
+                 urititle="User Guide" mediatype="application/vnd.pageseeder.psml+xml">
+        <document id="3470" schemaversion="1.4" date="2025-11-22T10:26:03+11:00" version="current" level="processed">
+          <documentinfo>
+            <uri id="3470" external="false" mediatype="application/vnd.pageseeder.psml+xml"
+                 created="2025-11-22T09:52:21+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+                 port="80" path="/ps/dev/samples/publications/useless/user_guide_document.psml"
+                 decodedpath="/ps/dev/samples/publications/useless/user_guide_document.psml" title="User Guide">
+              <displaytitle>User Guide</displaytitle>
+            </uri>
+            <reversexrefs>
+              <reversexref uriid="3462" href="useless.psml" frag="2" urititle="Useless Machine Design Pack"
+                           mediatype="application/vnd.pageseeder.psml+xml" documenttype="references" id="80067"
+                           title="References" type="none" forwardtype="embed" forwarddisplay="document"
+                           forwardfrag="default"></reversexref>
+            </reversexrefs>
+          </documentinfo>
+          <fragmentinfo structure-modified="2025-11-22T10:14:58+11:00">
+            <locator id="6162" fragment="3470-1" editid="80121" modified="2025-11-22T10:14:47+11:00"></locator>
+            <locator id="6163" fragment="3470-3" editid="80120" modified="2025-11-22T10:14:47+11:00"></locator>
+            <locator id="6164" fragment="3470-2" editid="80122" modified="2025-11-22T10:14:47+11:00"></locator>
+            <locator id="6165" fragment="3470-4" editid="80126" modified="2025-11-22T10:14:58+11:00"></locator>
+          </fragmentinfo>
+          <metadata></metadata>
+          <section id="3470-title">
+            <fragment id="3470-1">
+              <heading prefix="9" level="1" numbered="true" id="3470-1-1-1">User Guide</heading>
+            </fragment>
+          </section>
+          <section id="3470-content">
+            <fragment id="3470-2">
+              <heading prefix="9.1" level="2" numbered="true" id="3470-1-2-1">How to use</heading>
+              <nlist start="1">
+                <item>Place machine on a flat surface.</item>
+                <item>Flip the switch to ON.</item>
+                <item>Observe the machine turn itself OFF.</item>
+                <item>Repeat as desired.</item>
+              </nlist>
+            </fragment>
+            <fragment id="3470-3">
+              <heading prefix="9.2" level="2" numbered="true" id="3470-1-3-1">Safety notes</heading>
+              <list>
+                <item>Do not obstruct the arm during operation.</item>
+                <item>Replace batteries when movement weakens.</item>
+              </list>
+            </fragment>
+          </section>
+        </document>
+      </blockxref>
+      <blockxref id="80068" frag="default" reversefrag="2" reversetitle="References" reverselink="true"
+                 reversetype="none" display="document" type="embed" uriid="3471"
+                 href="useless/maintenance_document.psml" urititle="Maintenance"
+                 mediatype="application/vnd.pageseeder.psml+xml">
+        <document id="3471" schemaversion="1.4" date="2025-11-22T10:26:03+11:00" version="current" level="processed">
+          <documentinfo>
+            <uri id="3471" external="false" mediatype="application/vnd.pageseeder.psml+xml"
+                 created="2025-11-22T09:52:30+11:00" modified="2025-11-22T10:26:03+11:00" scheme="http" host="localhost"
+                 port="80" path="/ps/dev/samples/publications/useless/maintenance_document.psml"
+                 decodedpath="/ps/dev/samples/publications/useless/maintenance_document.psml" title="Maintenance">
+              <displaytitle>Maintenance</displaytitle>
+            </uri>
+            <reversexrefs>
+              <reversexref uriid="3462" href="useless.psml" frag="2" urititle="Useless Machine Design Pack"
+                           mediatype="application/vnd.pageseeder.psml+xml" documenttype="references" id="80068"
+                           title="References" type="none" forwardtype="embed" forwarddisplay="document"
+                           forwardfrag="default"></reversexref>
+            </reversexrefs>
+          </documentinfo>
+          <fragmentinfo structure-modified="2025-11-22T10:15:11+11:00">
+            <locator id="6166" fragment="3471-1" editid="80134" modified="2025-11-22T10:15:39+11:00"></locator>
+            <locator id="6167" fragment="3471-3" editid="80133" modified="2025-11-22T10:15:38+11:00"></locator>
+            <locator id="6168" fragment="3471-2" editid="80135" modified="2025-11-22T10:15:39+11:00"></locator>
+          </fragmentinfo>
+          <metadata></metadata>
+          <section id="3471-title">
+            <fragment id="3471-1">
+              <heading prefix="10" level="1" numbered="true" id="3471-1-1-1">Maintenance</heading>
+            </fragment>
+          </section>
+          <section id="3471-content">
+            <fragment id="3471-2">
+              <heading prefix="10.1" level="2" numbered="true" id="3471-1-2-1">Routine maintenance</heading>
+              <list>
+                <item>Replace batteries monthly with frequent use.</item>
+                <item>Tighten servo mounting screws as needed.</item>
+                <item>Check linkage for wear.</item>
+              </list>
+            </fragment>
+            <fragment id="3471-3">
+              <heading prefix="10.2" level="2" numbered="true" id="3471-1-3-1">Recommended lifespan</heading>
+              <list>
+                <item>Servo: 1–2 years typical.</item>
+                <item>Mechanical components: 3–5 years with moderate usage.</item>
+              </list>
+            </fragment>
+          </section>
+        </document>
+      </blockxref>
+    </xref-fragment>
+  </section>
+</document>

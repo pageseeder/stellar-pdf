@@ -69,25 +69,6 @@ final class PdfExportTaskTest {
     runAntTarget("test-whales-styled", "build/test/out/ant_whales_styled.pdf");
   }
 
-  @Test
-  void testAntBuildFile_Policy_Default() {
-    runAntTarget("test-policy-default", "build/test/out/ant_policy_default.pdf");
-  }
-
-  @Test
-  void testAntBuildFile_Policy_Style() {
-    runAntTarget("test-policy-styled", "build/test/out/ant_policy_styled.pdf");
-  }
-
-  @Test
-  void testAntBuildFile_PolicyProcessed_Default() {
-    runAntTarget("test-policy-processed-default", "build/test/out/ant_policy-processed_default.pdf");
-  }
-
-  @Test
-  void testAntBuildFile_PolicyProcessed_Style() {
-    runAntTarget("test-policy-processed-styled", "build/test/out/ant_policy-processed_styled.pdf");
-  }
 
   @Test
   void testAntBuildFile_Turtles_Default() {
@@ -109,6 +90,35 @@ final class PdfExportTaskTest {
     runAntTarget("test-basic-styled", "build/test/out/ant_basic_styled.pdf");
   }
 
+  @Test
+  void testAntBuildFile_Policy_Default() {
+    runAntTarget("test-policy-default", "build/test/out/ant_policy_default.pdf");
+  }
+
+  @Test
+  void testAntBuildFile_Policy_Styled() {
+    runAntTarget("test-policy-styled", "build/test/out/ant_policy_styled.pdf");
+  }
+
+  @Test
+  void testAntBuildFile_PolicyProcessed_Default() {
+    runAntTarget("test-policy-processed-default", "build/test/out/ant_policy-processed_default.pdf");
+  }
+
+  @Test
+  void testAntBuildFile_PolicyProcessed_Styled() {
+    runAntTarget("test-policy-processed-styled", "build/test/out/ant_policy-processed_styled.pdf");
+  }
+
+  @Test
+  void testAntBuildFile_Useless_Default() {
+    runAntTarget("test-useless-default", "build/test/out/ant_useless_default.pdf");
+  }
+
+  @Test
+  void testAntBuildFile_Useless_Styled() {
+    runAntTarget("test-useless-styled", "build/test/out/ant_useless_styled.pdf");
+  }
 
   @Test
   void testMissingDest() {

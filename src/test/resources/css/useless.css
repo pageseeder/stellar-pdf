@@ -1,0 +1,202 @@
+/**
+ * Build-in PSML styles
+ */
+
+@page {
+
+    @top-left {
+        margin: 10mm 0 5mm 0;
+        content: element(title);
+        font-family: 'Inter 18pt', 'Arial', sans-serif;
+        font-size: 9pt;
+        color: #0376BB;
+    }
+
+    @bottom-left {
+        border-top: .25mm solid #0376BB;
+        background: url("images/example-logo.png") no-repeat 0 6mm;
+        background-size: 30mm auto;
+        width: 30mm;
+        padding-left: 21mm;
+        content: '';
+    }
+
+    @bottom-right {
+        border-top: .25mm solid #0376BB;
+        margin: 5mm 0 10mm 0;
+        content: "Page " counter(page) " of " counter(pages);
+        font-family: 'Inter 18pt', 'Arial', sans-serif;
+        font-size: 9pt;
+        color: #333;
+    }
+
+}
+
+document {
+    font-family: 'Inter 18pt', 'Arial', sans-serif;
+    font-size: 9pt;
+}
+
+documentinfo > uri > displaytitle {
+    position: running(title);
+    text-align: left;
+    color: #0376BB;
+}
+
+documentinfo > uri > description,
+documentinfo > uri > labels {
+   display: none;
+}
+
+blockxref documentinfo {
+    display: none;
+}
+
+/* Title page -------------------- */
+
+@page:first {
+    background-image: url(images/example-cover.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 210mm 297mm;
+    margin: 10mm 24mm;
+
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right {  content: none; }
+}
+
+.title-page {
+    height: 270mm;
+    position: relative;
+}
+
+.title-page::after {
+    background-image: url(images/example-logo-white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 30mm;
+    position: absolute;
+    right: 0;
+    width: 66mm;
+}
+
+.title-page heading[level='1'] {
+    color: #004D81;
+    padding: 7cm 0 0;
+    font-weight: bold;
+}
+
+.title-page block[label='date'] {
+    color: #0376BB;
+    font-size: 15pt;
+    text-transform: uppercase;
+}
+
+/* TOC -------------------- */
+
+toc-tree::before {
+    color: #004D81;
+}
+
+toc-part link::before {
+    color: #0376BB;
+}
+
+/* Content ---------------- */
+
+section[id$='-content'] {
+    display: block;
+    margin-left: 15mm;
+}
+
+blockxref section[id$='-title'] {
+    height: auto;
+    display: block;
+    margin-left: 15mm;
+    border-bottom: 1pt dotted #0376BB;
+}
+
+/* Headings and paragraphs -------------------- */
+
+heading {
+    color: #004D81;
+}
+
+blockxref heading[level='1'] {
+    color: #004D81;
+    padding: 0;
+    font-size: 20pt;
+    font-weight: bold;
+    page-break-before: always;
+}
+
+blockxref heading[level='1'][prefix]::before {
+    content: attr(prefix) ' \00a0';
+    color: #0376BB;
+    display: inline-block;
+}
+
+heading[level='2'] {
+    margin-top: 1.5em;
+}
+
+heading[level='3'] {
+    color: #0376BB;
+}
+
+heading[prefix]::before,
+para[prefix][indent]::before {
+    content: attr(prefix) ' \00a0';
+    color: #0376BB;
+    display: inline-block;
+}
+
+heading[prefix]::before {
+    margin-left: -15mm;
+    min-width: 15mm;
+    text-align: right;
+}
+
+para[prefix][indent]::before {
+    margin-left: -6mm;
+    min-width: 6mm;
+    text-align: left;
+}
+
+para[prefix][indent='1']{
+    margin-left: 6mm
+}
+
+para[prefix][indent='2']{
+    margin-left: 12mm
+}
+
+/* List --------------------- */
+
+list {
+    list-style-type: square;
+}
+
+/* Tables -------------------- */
+
+table,
+table cell,
+table hcell {
+    border-color: #004D81;
+    border-left: 0 none;
+    border-right: 0 none;
+}
+
+table row[part='header'] cell,
+table row[part='header'] hcell {
+    background-color: #004D81;
+    color: white;
+}
+
+/* Labels ------------- */
