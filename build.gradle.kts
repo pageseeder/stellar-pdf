@@ -37,7 +37,6 @@ dependencies {
     implementation(libs.flyingsaucer.pdf)
 
     runtimeOnly(libs.slf4j.simple)
-    runtimeOnly(libs.saxon)
 
     testImplementation(platform(libs.junit.bom))
     testImplementation(libs.bundles.junit)
