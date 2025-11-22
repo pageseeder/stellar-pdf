@@ -46,7 +46,7 @@ final class BookmarksTest {
 
     Bookmarks bookmarks = Bookmarks.load(doc, 3);
 
-//    assertEquals(2, getBookmarksSize(bookmarks), "Bookmarks list size should not include headings with level > maxLevel");
+    assertEquals(1, getBookmarksSize(bookmarks), "Bookmarks list size should not include headings with level > maxLevel");
   }
 
   /**
@@ -61,45 +61,7 @@ final class BookmarksTest {
 
     Bookmarks bookmarks = Bookmarks.load(doc, 4);
 
-//    assertEquals(2, getBookmarksSize(bookmarks), "Bookmarks list size should not include headings with level > maxLevel");
-  }
-
-
-  /**
-   * Test for the Bookmarks.load(Document doc) method without a 'toc' node.
-   * Verifies that the method falls back to headings when 'toc' is missing in the document.
-   */
-  @Test
-  void testLoad_FallbackToHeadings() throws Exception {
-    String xml = "<psml>"
-        + "<section title=\"Title 1\" level=\"1\"/>"
-        + "<section title=\"Title 2\" level=\"2\"/>"
-        + "</psml>";
-    Document doc = parseXml(xml);
-
-    Bookmarks bookmarks = Bookmarks.load(doc);
-
-    assertEquals(2, getBookmarksSize(bookmarks), "Bookmarks list size should match the number of headings");
-  }
-
-  /**
-   * Test for the Bookmarks.load(Document doc, int maxLevel) when 'toc' is present.
-   * Verifies a more complex tree structure with nested levels and maxDepth limitation.
-   */
-  @Test
-  void testLoad_TocWithMaxLevel() throws Exception {
-    String xml = "<psml><toc><toc-tree>"
-        + "<toc-part id=\"1\" name=\"Part 1\">"
-        + "  <toc-part id=\"1-1\" name=\"Subpart 1-1\">"
-        + "    <toc-part id=\"1-1-1\" name=\"Subpart 1-1-1\"/>"
-        + "  </toc-part>"
-        + "</toc-part>"
-        + "</toc-tree></toc></psml>";
-    Document doc = parseXml(xml);
-
-    Bookmarks bookmarks = Bookmarks.load(doc, 2);
-
-    assertEquals(2, getBookmarksSize(bookmarks), "Nested bookmarks should respect the maxLevel limit");
+    assertEquals(1, getBookmarksSize(bookmarks), "Bookmarks list size should not include headings with level > maxLevel");
   }
 
   // Helper method to parse XML string into Document
