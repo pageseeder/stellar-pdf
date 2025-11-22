@@ -6,13 +6,10 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.time.ZonedDateTime;
+import javax.xml.xpath.XPathExpressionException;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
-import java.time.format.FormatStyle;
 import java.time.temporal.TemporalAccessor;
 
 /**
@@ -21,7 +18,7 @@ import java.time.temporal.TemporalAccessor;
  * @author Christophe lauret
  *
  * @since 0.6.2
- * @version 0.6.2
+ * @version 0.7.0
  */
 public class TitlePage {
 
@@ -52,45 +49,44 @@ public class TitlePage {
    */
   public static void injectTitleFragment(Document doc, @Nullable TitlePageConfig config) {
     Element firstSection = (Element)doc.getDocumentElement().getElementsByTagName("section").item(0);
-    if (firstSection != null) {
-      Element titleInfoFragment = doc.createElement("fragment");
-      titleInfoFragment.setAttribute("id", "title-page-"+System.currentTimeMillis());
-      titleInfoFragment.setAttribute("type", "title-page");
-
-      if (config != null && !config.isEmpty()) {
-        for (TitlePageItem item : config.getItems()) {
-          if (item.hasNameAndXpath()) {
-            Element block = doc.createElement("block");
-            block.setAttribute("label", item.getName());
-            try {
-              String value = Utils.getElementValue(doc, item.getXpath());
-              String format = item.getFormat();
-
-              // Apply format if specified
-              if (format != null) {
-                value = applyFormat(value, format);
-              }
-
-              block.setTextContent(value);
-
-            } catch (Exception ex) {
-              LOGGER.warn("Unable to get value for xpath `{}`: {}", item.getXpath(), ex.getMessage());
-            }
-            titleInfoFragment.appendChild(block);
-          } else {
-            LOGGER.warn("Invalid title page item: {}", item);
-          }
-        }
-      } else {
-        // Default behavior if no config
-        Element block = doc.createElement("block");
-        block.setAttribute("label", "pdf-date");
-        block.setTextContent(LocalDate.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)));
-        titleInfoFragment.appendChild(block);
+    if (firstSection != null && config != null) {
+      firstSection.setAttribute("class", "title-page");
+      if (!config.isEmpty()) {
+        createTitlePageFragment(doc, config, firstSection);
       }
-
-      firstSection.appendChild(titleInfoFragment);
     }
+  }
+
+  /**
+   * Creates a title page fragment from the given configuration.
+   *
+   * @param doc the XML document in which to inject the fragment;
+   * @param config the title page configuration (may be null, in which case default block is injected)
+   * @param firstSection the first section in the document
+   */
+  private static void createTitlePageFragment(Document doc, TitlePageConfig config, Element firstSection) {
+    Element titleInfoFragment = doc.createElement("fragment");
+    titleInfoFragment.setAttribute("id", "title-page-"+System.currentTimeMillis());
+    titleInfoFragment.setAttribute("type", "title-page");
+
+    for (TitlePageItem item : config.getItems()) {
+      if (item.hasNameAndXpath()) {
+        Element block = doc.createElement("block");
+        block.setAttribute("label", item.getName());
+        try {
+          String xpath = item.getXpath().trim();
+          String value = getValue(doc, xpath, item.getFormat());
+          block.setTextContent(value);
+
+        } catch (Exception ex) {
+          LOGGER.warn("Unable to get value for xpath `{}`: {}", item.getXpath(), ex.getMessage());
+        }
+        titleInfoFragment.appendChild(block);
+      } else {
+        LOGGER.warn("Invalid title page item: {}", item);
+      }
+    }
+    firstSection.appendChild(titleInfoFragment);
   }
 
   /**
@@ -119,4 +115,23 @@ public class TitlePage {
     }
   }
 
+  private static String getValue(Document doc, String xpath, @Nullable String format) throws XPathExpressionException {
+    switch (xpath) {
+      case "current-date()":
+        LocalDate date = LocalDate.now();
+        return format == null ? date.toString() : date.format(DateTimeFormatter.ofPattern(format));
+      case "current-time()":
+        LocalTime time = LocalTime.now();
+        return format == null ? time.toString() : time.format(DateTimeFormatter.ofPattern(format));
+      case "current-dateTime()":
+        LocalDateTime dateTime = LocalDateTime.now();
+        return format == null ? dateTime.toString() : dateTime.format(DateTimeFormatter.ofPattern(format));
+      default:
+        String value = Utils.getElementValue(doc, xpath);
+        if (format != null) {
+          value = applyFormat(value, format);
+        }
+        return value;
+    }
+  }
 }
