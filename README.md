@@ -42,7 +42,9 @@ This project is still in development and not yet ready for production.
 Here are some known limitations:
 - It does not support the `set-string` CSS property
 - It only generates the TOC if processed by PageSeeder
-- It does to compute the numbering headings and paragraphs.
+- It does to compute the numbering headings and paragraphs (you need to use PageSeeder's process task for that)
+- It does NOT support SVG images
+- It does NOT support Math elements
 
 ## Stellar tasks
 
