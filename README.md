@@ -84,7 +84,7 @@ a fragment with type `title-page`.
 ```xml
   <fragment id="title-page-1763706659718" type="title-page">
      <block label="subtitle">An example of a subtitle</block>
-     <block label="subtitle">21 November 2025</block>
+     <block label="pubdate">21 November 2025</block>
   </fragment>
 ```
 
@@ -151,6 +151,44 @@ Use the `stellar:export-pdf` task to generate the PDF, for example:
                  stylesheet="${stellar-dir}/css/example.css" />
 ```
 
+### PSML export and process
+
+Stellar PDF can work on portable and processed PSML documents.
+
+You can use the [export task](https://dev.pageseeder.com/guide/publishing/ant_api/tasks/task_export.html) to
+download the document from PageSeeder and process it locally.
+
+```xml
+    <ps:export src="[path on PageSeeder]"
+               dest="[path on file system]"
+               xrefdepth="1">
+      <xrefs types="embed,transclude,math"/>
+    </ps:export>
+```
+
+The PDF bookmarks are generated automatically from the document's headings.
+
+However, if you want the Table of Contents and auto-numbers to be generated, you should use 
+the [process task](https://dev.pageseeder.com/guide/publishing/ant_api/tasks/task_process.html).
+with a publication configuration file, as follows:
+
+```xml
+    <ps:process src="[source portable PSML]" 
+                dest="[target processed PSML]"
+                stripmetadata="false" preservesrc="false">
+      <xrefs types="embed,transclude,math" >
+        <include name="${ps.config.default.uri.filename}" />
+      </xrefs>
+      <publication config="[path to publication config file]"
+                   rootfile="[source portable PSML]"
+                   generatetoc="true"
+                   headingleveladjust="numbering" />
+    </ps:process>
+```
+
+Note: You can set the `stripmetadata` attribute to `true`, but you might not be able to use the document title
+for the headers and footers from the metadata in that case.
+
 ### Example
 
 The following is an example of a `build.xml` file that uses the stellar ant task to generate a PDF
@@ -176,6 +214,7 @@ for a PSML document.
     <ps:progress percent="5" message="Loading PageSeeder configuration"/>
     <ps:config />
 
+    <property name="working" value="${ps.config.default.working}" />
     <property name="download" value="${ps.config.default.working}/download" />
     <property name="process" value="${ps.config.default.working}/process" />
     <mkdir dir="${download}"/>
@@ -217,3 +256,180 @@ for a PSML document.
 
 </project>
 ```
+
+## CSS configuration
+
+The CSS styles apply directly to the PSML document to generate as 
+a [paged media](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Paged_media) document.
+
+If you don't specify a custom CSS, the [default CSS](src/main/resources/psml.css) is used.
+
+When you specify a custom CSS, it is applied after the default CSS as an author style sheet, so you 
+can override the default CSS rules.
+
+### Default CSS
+
+The default CSS contains basic CSS rules for the PSML to render correctly, in the same way that
+the built-in CSS rules for HTML documents do.
+
+It specifies CSS rules which are common to most PSML documents:
+ - font sizes for headings, paragraphs, and code blocks
+ - margins and line height for paragraphs and code blocks
+ - basic styling for tables, lists, and inline PSML elements
+ - display rules for PSML elements
+
+But it is primarily designed to be extended by custom CSS rules, it produces a rather
+uninspired PDF.
+
+### Page size and margins
+
+You can specify the page size in the CSS file, for example:
+
+```css
+@page {
+    size: A4;
+    margin: 24mm 20mm;
+}
+```
+
+### Headers and footers
+
+You can specify the headers and footers in the CSS file, for example:
+
+```css
+@page {
+
+    @top-left {
+        margin: 10mm 0 5mm 0;
+        content: element(title);
+        font-size: 9pt;
+    }
+
+    @bottom-right {
+        margin: 5mm 0 10mm 0;
+        content: "Page " counter(page) " of " counter(pages);
+        font-size: 9pt;
+    }
+
+}
+
+/* Use the title from the document metadata as the header title */
+documentinfo > uri > displaytitle {
+    display: inline;
+    position: running(title);
+    text-align: center;
+    color: #008995;
+}
+```
+
+### Title page
+
+If you want to style the title page in your PDF, make sure that you use the `title-page` option.
+
+To style the actual page you can use the `@page:first` selector.
+
+To style the content, you can use the `.title-page` selector which is applied to the first section of the document.
+
+For example:
+
+```css
+/* Hide the headers and footers on the title page and show a background image */
+@page:first {
+    background-image: url(images/title-cover.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 210mm 297mm;
+
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right {  content: none; }
+}
+
+/* Style the heading 1 */
+.title-page heading[level='1'] {
+    color: #3e0021;
+    padding: 7cm 0 0;
+    font-weight: 300;
+}
+
+/* Style other elements on the title page */
+.title-page block[label='pubdate'] {
+    color: #ea007e;
+    font-size: 15pt;
+    font-weight: 300;
+}
+```
+
+### Headings and paragraphs
+
+The default CSS rules for [heading](https://dev.pageseeder.com/psml/elements/element-heading.html) 
+and [paragraphs](https://dev.pageseeder.com/psml/elements/element-para.html) define the font size and 
+line height for headings and paragraphs.
+
+Typical customization include changing the color of the headings, specify rules for page breaks, 
+formatting the prefix, or adjusting the margins.
+
+Here are a few examples:
+
+```css
+heading[level='2'] {
+    color: #3e0021;
+    page-break-before: always;
+}
+
+heading[level='3'] {
+    color: #9a0153;
+}
+
+heading[prefix]::before,
+para[prefix]::before {
+    color: #ea007e;
+}
+```
+
+### Lists
+
+You can specify the style of [lists](https://dev.pageseeder.com/psml/elements/element-list.html), for example:
+
+```css
+list {
+    list-style-type: square;
+}
+```
+
+### Tables
+
+You can specify the style of [tables](https://dev.pageseeder.com/psml/elements/element-table.html), for example:
+
+```css
+table,
+table cell,
+table hcell {
+    border-color: #004D81;
+}
+
+table row[part='header'] cell,
+table row[part='header'] hcell {
+    background-color: #004D81;
+    color: white;
+}
+```
+
+### Code blocks
+
+You can specify the style of [code blocks](https://dev.pageseeder.com/psml/elements/element-preformat.html), for example:
+
+```css
+preformat {
+    background-color: #f5f5f5;
+    border-radius: 1.5mm;
+    border-left: 2mm solid #ffaed9;
+    color: #004595;
+    font-size: 9pt;
+    padding: 2mm;
+    page-break-inside: avoid;
+}
+```
+
+Complete examples of CSS files can be found in the [css test folder](src/test/resources/css).
