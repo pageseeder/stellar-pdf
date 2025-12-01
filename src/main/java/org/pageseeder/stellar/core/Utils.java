@@ -1,7 +1,7 @@
 package org.pageseeder.stellar.core;
 
 import com.lowagie.text.pdf.PdfDate;
-import org.eclipse.jdt.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

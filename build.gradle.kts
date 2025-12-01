@@ -28,9 +28,8 @@ java {
 }
 
 dependencies {
-    compileOnly(libs.annotations)
-    compileOnly(libs.ant.core)
-
+    api(libs.ant.core)
+    api(libs.jspecify)
     api(libs.slf4j.api)
 
     implementation(libs.flyingsaucer.core)
@@ -40,7 +39,7 @@ dependencies {
 
     testImplementation(platform(libs.junit.bom))
     testImplementation(libs.bundles.junit)
-    testImplementation(libs.annotations)
+    testImplementation(libs.jspecify)
     testImplementation(libs.ant.core)
 
     testRuntimeOnly(libs.junit.jupiter.engine)

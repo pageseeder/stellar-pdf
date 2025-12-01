@@ -5,7 +5,7 @@ import org.apache.tools.ant.Task;
 import org.apache.tools.ant.BuildException;
 import java.io.*;
 
-import org.eclipse.jdt.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import org.pageseeder.stellar.core.PdfGenerator;
 import org.pageseeder.stellar.core.TitlePageConfig;
 

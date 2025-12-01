@@ -1,6 +1,6 @@
 package org.pageseeder.stellar.core;
 
-import org.eclipse.jdt.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import org.w3c.dom.Element;
 import org.xhtmlrenderer.render.Box;
 
