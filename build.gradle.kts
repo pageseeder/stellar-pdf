@@ -3,11 +3,11 @@ plugins {
     id("maven-publish")
     id("jacoco")
     alias(libs.plugins.jreleaser)
+    alias(libs.plugins.sonar)
 }
 
 val title: String by project
 val gitName: String by project
-val website: String by project
 
 group = "org.pageseeder.stellar"
 version = file("version.txt").readText().trim()
@@ -46,6 +46,18 @@ dependencies {
 
 }
 
+sonar {
+    properties {
+        property("sonar.projectKey", "pageseeder_stellar-pdf")
+        property("sonar.organization", "pageseeder")
+        // Tell SonarCloud where the JaCoCo XML report is
+        property(
+            "sonar.coverage.jacoco.xmlReportPaths",
+            layout.buildDirectory.file("reports/jacoco/test/jacocoTestReport.xml").get().asFile.absolutePath
+        )
+    }
+}
+
 // Set Gradle version
 tasks.wrapper {
     gradleVersion = "8.14"
@@ -54,18 +66,22 @@ tasks.wrapper {
 
 tasks.test {
     useJUnitPlatform()
-}
-
-tasks.withType<Javadoc> {
-    options {
-        encoding = "UTF-8"
-    }
+    // make sure report generation happens after tests when requested
+    finalizedBy(tasks.jacocoTestReport)
 }
 
 tasks.jacocoTestReport {
     dependsOn(tasks.test)
     reports {
-        xml.required.set(true)
+        xml.required.set(true)   // Sonar reads this
+        html.required.set(true)  // nice to have for CI artifacts/debugging
+        csv.required.set(false)
+    }
+}
+
+tasks.withType<Javadoc> {
+    options {
+        encoding = "UTF-8"
     }
 }
 
@@ -76,7 +92,7 @@ publishing {
             pom {
                 name.set(title)
                 description.set(project.description)
-                url.set(website)
+                url.set("https://github.com/pageseeder/${gitName}")
                 licenses {
                     license {
                         name.set("The Apache Software License, Version 2.0")
