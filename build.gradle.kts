@@ -3,6 +3,7 @@ plugins {
     id("maven-publish")
     id("jacoco")
     alias(libs.plugins.jreleaser)
+    alias(libs.plugins.shadow)
     alias(libs.plugins.sonar)
 }
 
@@ -41,7 +42,7 @@ dependencies {
     testImplementation(libs.bundles.junit)
     testImplementation(libs.jspecify)
     testImplementation(libs.ant.core)
-
+2
     testRuntimeOnly(libs.junit.jupiter.engine)
 
 }
@@ -83,6 +84,19 @@ tasks.withType<Javadoc> {
     options {
         encoding = "UTF-8"
     }
+}
+
+tasks.shadowJar {
+    archiveClassifier.set("standalone")
+    dependencies {
+        exclude(dependency("org.apache.ant:.*"))
+        exclude(dependency("org.jspecify:.*"))
+        exclude(dependency("org.slf4j:.*"))
+    }
+    relocate("org.xhtmlrenderer", "org.pageseeder.stellar.internal.xhtmlrenderer")
+    relocate("com.lowagie", "org.pageseeder.stellar.internal.lowagie")
+    relocate("javax.annotation", "org.pageseeder.stellar.internal.javax.annotation")
+    mergeServiceFiles()
 }
 
 publishing {

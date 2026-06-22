@@ -32,4 +32,5 @@ junit = [
 
 [plugins]
 jreleaser = { id = "org.jreleaser", version = "1.21.0" }
+shadow = { id = "com.gradleup.shadow", version = "9.1.0" }
 sonar = { id = "org.sonarqube", version = "7.1.0.6387" }
