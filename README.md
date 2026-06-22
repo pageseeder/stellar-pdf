@@ -1,3 +1,7 @@
+[![Maven Central](https://img.shields.io/maven-central/v/org.pageseeder.stellar/pso-stellarpdf.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22org.pageseeder.stellar%22%20AND%20a:%22pso-stellarpdf%22)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=pageseeder_stellar-pdf&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=pageseeder_stellar-pdf)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=pageseeder_stellar-pdf&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=pageseeder_stellar-pdf)
+
 # stellar-pdf
 
 Generate beautiful, print-ready PDFs from PSML documents with the Flying Saucer library
@@ -8,11 +12,27 @@ Generate beautiful, print-ready PDFs from PSML documents with the Flying Saucer 
 - It depends on external libraries, including [Flying Saucer](https://github.com/flyingsaucerproject/flyingsaucer), which is licensed under the [GNU Lesser General Public License (LGPL)](https://www.gnu.org/licenses/lgpl-2.1.html).
 - This project includes fonts for testing purposes licenced under the SIL open font licence.
 
+## Standalone jar
+
+A standalone jar (`pso-stellarpdf-<version>-standalone.jar`) is published alongside the
+standard library jar. It bundles Flying Saucer and OpenPDF with relocated packages to avoid
+classpath conflicts, making it convenient to drop into environments like ANT without managing
+transitive dependencies.
+
+The standalone jar does **not** include ANT, SLF4J, or jspecify — these are expected to be
+provided by the runtime environment.
+
+Because Flying Saucer and OpenPDF are LGPL-licensed, their packages are relocated in the
+standalone jar. If you need to substitute a modified version of these libraries, use the
+standard (thin) jar with the original dependencies instead.
+
 ## Notices and Requirements for LGPL Libraries
 
 - When using, distributing, or modifying this project, **please be aware that you must also comply with the terms of the LGPL** as it applies to any LGPL-licensed libraries.
 - For details, refer to the [LGPL license text](https://www.gnu.org/licenses/lgpl-2.1.html).
-- The source code for these third-party libraries can be found at their respective repositories. For Flying Saucer, see: [https://github.com/flyingsaucerproject/flyingsaucer](https://github.com/flyingsaucerproject/flyingsaucer).
+- The source code for these third-party libraries can be found at their respective repositories:
+  - Flying Saucer: [https://github.com/flyingsaucerproject/flyingsaucer](https://github.com/flyingsaucerproject/flyingsaucer)
+  - OpenPDF: [https://github.com/LibrePDF/OpenPDF](https://github.com/LibrePDF/OpenPDF)
 
 ## Requirements
 
