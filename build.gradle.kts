@@ -42,7 +42,7 @@ dependencies {
     testImplementation(libs.bundles.junit)
     testImplementation(libs.jspecify)
     testImplementation(libs.ant.core)
-2
+
     testRuntimeOnly(libs.junit.jupiter.engine)
 
 }
@@ -61,7 +61,7 @@ sonar {
 
 // Set Gradle version
 tasks.wrapper {
-    gradleVersion = "8.14"
+    gradleVersion = "8.14.5"
     distributionType = Wrapper.DistributionType.ALL
 }
 
